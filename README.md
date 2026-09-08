@@ -31,6 +31,9 @@ Want more? Say it: "add my photo", "make the background green", "add a line abou
 ## Rules
 
 1. Edit only inside your own START and END markers. Claude Code knows this, remind it if it wanders.
+   Keep everything for your card inside your block, including any styling (use style attributes or a
+   <style> tag inside your own section). Never edit the shared <style> block at the top of the page:
+   that is the one place two people's changes collide.
 2. Nobody types a git command. Claude Code handles pull, commit and push. If it says the push was rejected, say: "someone else pushed, pull their work and push mine again".
 3. If the page breaks, that is fine. We fix it live.
 
