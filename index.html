@@ -452,10 +452,37 @@
   <style>
     #nishajaiwin h2 a { color:#7B5EA7; border-bottom-color:#7B5EA7; }
     #nishajaiwin:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(123,94,167,0.25); }
+    #nishajaiwin .lotus { display:block; margin:10px 0 2px; }
+    #nishajaiwin .lotus-bloom { transform-box: view-box; transform-origin: 50px 80px; }
+    @media (prefers-reduced-motion: no-preference) {
+      #nishajaiwin .lotus-bloom { animation: nishajaiwin-bloom 7s ease-in-out infinite; }
+    }
+    @keyframes nishajaiwin-bloom {
+      0%, 100% { transform: rotate(-2deg) scale(0.99); }
+      50%      { transform: rotate(2deg) scale(1.02); }
+    }
   </style>
   <h2><a href="https://github.com/nishajaiwin">@nishajaiwin</a></h2>
   <p class="who">Nisha &middot; People and Culture</p>
   <p>Claimed! Here for the people side of the work.</p>
+  <svg class="lotus" viewBox="0 0 100 100" width="96" height="96" role="img" aria-label="Violet lotus illustration">
+    <g class="lotus-bloom">
+      <ellipse cx="28" cy="86" rx="15" ry="4" fill="#B9A7D1" opacity="0.55"/>
+      <ellipse cx="72" cy="86" rx="15" ry="4" fill="#B9A7D1" opacity="0.55"/>
+      <g fill="#A487C9">
+        <path d="M50 80 C 40 64, 40 46, 50 34 C 60 46, 60 64, 50 80 Z" transform="rotate(-60 50 80)"/>
+        <path d="M50 80 C 40 64, 40 46, 50 34 C 60 46, 60 64, 50 80 Z" transform="rotate(-38 50 80)"/>
+        <path d="M50 80 C 40 64, 40 46, 50 34 C 60 46, 60 64, 50 80 Z" transform="rotate(38 50 80)"/>
+        <path d="M50 80 C 40 64, 40 46, 50 34 C 60 46, 60 64, 50 80 Z" transform="rotate(60 50 80)"/>
+      </g>
+      <g fill="#7B5EA7">
+        <path d="M50 80 C 36 58, 36 34, 50 20 C 64 34, 64 58, 50 80 Z" transform="rotate(-28 50 80)"/>
+        <path d="M50 80 C 36 58, 36 34, 50 20 C 64 34, 64 58, 50 80 Z" transform="rotate(28 50 80)"/>
+        <path d="M50 80 C 36 58, 36 34, 50 20 C 64 34, 64 58, 50 80 Z"/>
+      </g>
+      <ellipse cx="50" cy="72" rx="6" ry="3.5" fill="#D4A24C"/>
+    </g>
+  </svg>
 </section>
 <!-- ===== END nishajaiwin ===== -->
 
