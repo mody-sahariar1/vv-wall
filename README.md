@@ -37,13 +37,3 @@ Want more? Say it: "add my photo", "make the background green", "add a line abou
 ## If you do not have a card
 
 Tell Claude Code: "add a card for me at the end of the wall, using my GitHub username, and publish it".
-
-## Build stats and analytics
-
-The top of the wall has a compact **build stats** panel, and it links to `analytics.html`, a fuller read: the path from claiming a card to publishing it, activity over time, what is finished but not yet published.
-
-Both are generated from this repo's git history, not written by hand:
-
-    python3 tools/build_activity.py
-
-Re-run it any time to refresh the numbers. It rewrites only the generated block in `index.html` (your card is never touched) and regenerates `analytics.html`. New contributors are attributed by their GitHub username automatically.
