@@ -53,7 +53,85 @@
     #rmaheshkumar73-code .name { margin:0; font-size:.9rem; color:#F5F7FA; }
     #rmaheshkumar73-code .role { margin:0; font-size:.85rem; color:#E8B84B; }
     #rmaheshkumar73-code .tagline { margin:6px 0 0; font-size:.75rem; font-style:italic; color:#A9C0E0; }
+    #rmaheshkumar73-code .mk { width:100%; display:block; border-radius:8px; margin-bottom:12px; }
+    #rmaheshkumar73-code .mk-hand { transform-box:view-box; transform-origin:100px 71px; }
+    #rmaheshkumar73-code .mk-min { animation:mk-rmk-spin 12s linear infinite; }
+    #rmaheshkumar73-code .mk-hr { animation:mk-rmk-spin 144s linear infinite; }
+    #rmaheshkumar73-code .mk-star { animation:mk-rmk-twinkle 3.4s ease-in-out infinite; }
+    @keyframes mk-rmk-spin { to { transform:rotate(360deg); } }
+    @keyframes mk-rmk-twinkle { 0%,100% { opacity:.25; } 50% { opacity:1; } }
+    @media (prefers-reduced-motion: reduce) {
+      #rmaheshkumar73-code .mk-min,
+      #rmaheshkumar73-code .mk-hr,
+      #rmaheshkumar73-code .mk-star { animation:none; }
+    }
   </style>
+  <svg class="mk" viewBox="0 0 200 130" role="img" aria-label="Anime-style night illustration of the Kovai Mani Koondu clock tower">
+    <defs>
+      <linearGradient id="mk-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#24467E"/>
+        <stop offset="55%" stop-color="#152F5C"/>
+        <stop offset="100%" stop-color="#0B2447"/>
+      </linearGradient>
+      <linearGradient id="mk-stone" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#F6EAD0"/>
+        <stop offset="55%" stop-color="#E3D0A6"/>
+        <stop offset="100%" stop-color="#BFA675"/>
+      </linearGradient>
+      <radialGradient id="mk-moon">
+        <stop offset="0%" stop-color="#FFF8DE"/>
+        <stop offset="100%" stop-color="#F0DB9C"/>
+      </radialGradient>
+    </defs>
+
+    <rect width="200" height="130" fill="url(#mk-sky)"/>
+
+    <circle cx="158" cy="25" r="18" fill="#FFF6D8" opacity=".09"/>
+    <circle cx="158" cy="25" r="10.5" fill="url(#mk-moon)"/>
+
+    <g fill="#FFFFFF">
+      <circle class="mk-star" cx="26" cy="19" r="1.4" style="animation-delay:0s"/>
+      <circle class="mk-star" cx="52" cy="34" r="1" style="animation-delay:.7s"/>
+      <circle class="mk-star" cx="16" cy="52" r="1.1" style="animation-delay:1.5s"/>
+      <circle class="mk-star" cx="118" cy="16" r="1.2" style="animation-delay:2.1s"/>
+      <circle class="mk-star" cx="184" cy="58" r="1" style="animation-delay:1.1s"/>
+      <circle class="mk-star" cx="38" cy="72" r=".9" style="animation-delay:2.7s"/>
+      <circle class="mk-star" cx="176" cy="94" r="1.1" style="animation-delay:.4s"/>
+    </g>
+
+    <path d="M0 112 L38 104 L74 110 L126 106 L166 112 L200 105 L200 130 L0 130 Z" fill="#081B37" opacity=".85"/>
+
+    <g stroke="#08182F" stroke-width="2" stroke-linejoin="round">
+      <rect x="70" y="112" width="60" height="18" fill="url(#mk-stone)"/>
+      <rect x="77" y="92" width="46" height="20" fill="url(#mk-stone)"/>
+      <rect x="81" y="50" width="38" height="42" fill="url(#mk-stone)"/>
+      <rect x="86" y="40" width="28" height="10" fill="url(#mk-stone)"/>
+      <path d="M86 40 L100 14 L114 40 Z" fill="#C9553E"/>
+      <circle cx="100" cy="12" r="3" fill="#E8B84B"/>
+      <circle cx="100" cy="71" r="14" fill="#FFF6DC"/>
+    </g>
+
+    <g fill="#E8B84B" opacity=".9">
+      <rect x="84" y="96" width="7" height="11" rx="3"/>
+      <rect x="96.5" y="96" width="7" height="11" rx="3"/>
+      <rect x="109" y="96" width="7" height="11" rx="3"/>
+      <rect x="88" y="118" width="8" height="12" rx="4"/>
+      <rect x="104" y="118" width="8" height="12" rx="4"/>
+    </g>
+
+    <g stroke="#08182F" stroke-width="1.6" stroke-linecap="round">
+      <line x1="100" y1="59" x2="100" y2="62"/>
+      <line x1="100" y1="80" x2="100" y2="83"/>
+      <line x1="88" y1="71" x2="91" y2="71"/>
+      <line x1="109" y1="71" x2="112" y2="71"/>
+    </g>
+
+    <g stroke="#08182F" stroke-linecap="round">
+      <line class="mk-hand mk-hr" x1="100" y1="71" x2="100" y2="64" stroke-width="2.6"/>
+      <line class="mk-hand mk-min" x1="100" y1="71" x2="108" y2="71" stroke-width="1.8"/>
+    </g>
+    <circle cx="100" cy="71" r="1.8" fill="#08182F"/>
+  </svg>
   <h2><a href="https://github.com/rmaheshkumar73-code">@rmaheshkumar73-code</a></h2>
   <p class="name">Mahesh</p>
   <p class="role">DEEP Coimbatore</p>
