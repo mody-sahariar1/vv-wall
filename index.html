@@ -189,16 +189,18 @@
     #Poomuthu-G .ck-fly { animation:ck-pg-fly 2.4s ease-in-out infinite; }
     #Poomuthu-G .ck-bat { transform-box:view-box; transform-origin:104px 52px; animation:ck-pg-bob 2.4s ease-in-out infinite; }
     #Poomuthu-G .ck-glow { animation:ck-pg-glow 3.2s ease-in-out infinite; }
+    #Poomuthu-G .ck-fan { animation:ck-pg-cheer 1.9s ease-in-out infinite; }
     @keyframes ck-pg-spin { to { transform:rotate(360deg); } }
     @keyframes ck-pg-fly { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
     @keyframes ck-pg-bob { 0%,100% { transform:rotate(0deg); } 50% { transform:rotate(-6deg); } }
     @keyframes ck-pg-glow { 0%,100% { opacity:.22; } 50% { opacity:.6; } }
+    @keyframes ck-pg-cheer { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-2.4px); } }
     @media (prefers-reduced-motion: reduce) {
-      #Poomuthu-G .ck-spin, #Poomuthu-G .ck-fly,
-      #Poomuthu-G .ck-bat, #Poomuthu-G .ck-glow { animation:none; }
+      #Poomuthu-G .ck-spin, #Poomuthu-G .ck-fly, #Poomuthu-G .ck-bat,
+      #Poomuthu-G .ck-glow, #Poomuthu-G .ck-fan { animation:none; }
     }
   </style>
-  <svg class="ck" viewBox="0 0 200 130" role="img" aria-label="Illustration of a cricket batsman in a yellow jersey under floodlights, with a spinning red ball">
+  <svg class="ck" viewBox="0 0 200 130" role="img" aria-label="Illustration of a cricket batsman in a yellow jersey under floodlights, with a spinning red ball and a crowd of cheering fans">
     <defs>
       <linearGradient id="ck-pg-sky" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="#17545A"/>
@@ -213,6 +215,47 @@
         <stop offset="0%" stop-color="#E86154"/>
         <stop offset="100%" stop-color="#8E241E"/>
       </radialGradient>
+
+      <g id="ck-pg-fan-a" fill="currentColor" stroke="currentColor">
+        <circle cx="0" cy="-13" r="2.6" stroke="none"/>
+        <path d="M-2.4 -10.6 L2.4 -10.6 L3 -4.4 L-3 -4.4 Z" stroke="none"/>
+        <path d="M-2.6 -4.4 L-2.1 0 L-0.5 0 L-0.4 -4.4 Z" stroke="none"/>
+        <path d="M0.4 -4.4 L0.5 0 L2.1 0 L2.6 -4.4 Z" stroke="none"/>
+        <path d="M-2.4 -10 L-6.2 -16.8" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M2.4 -10 L6.2 -16.8" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+
+      <g id="ck-pg-fan-b" fill="currentColor" stroke="currentColor">
+        <circle cx="0" cy="-13" r="2.6" stroke="none"/>
+        <path d="M-2.4 -10.6 L2.4 -10.6 L3 -4.4 L-3 -4.4 Z" stroke="none"/>
+        <path d="M-2.6 -4.4 L-2.1 0 L-0.5 0 L-0.4 -4.4 Z" stroke="none"/>
+        <path d="M0.4 -4.4 L0.5 0 L2.1 0 L2.6 -4.4 Z" stroke="none"/>
+        <path d="M-2.4 -10 L-5.2 -5.6" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M2.4 -10.4 Q5.6 -13.2 5.2 -17.4" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+
+      <g id="ck-pg-fan-c" fill="currentColor" stroke="currentColor">
+        <circle cx="0" cy="-13" r="2.6" stroke="none"/>
+        <path d="M-2.4 -10.6 L2.4 -10.6 L3 -4.4 L-3 -4.4 Z" stroke="none"/>
+        <path d="M-2.6 -4.4 L-2.1 0 L-0.5 0 L-0.4 -4.4 Z" stroke="none"/>
+        <path d="M0.4 -4.4 L0.5 0 L2.1 0 L2.6 -4.4 Z" stroke="none"/>
+        <path d="M-2.4 -10 L-3.8 -16.4" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M2.4 -10 L4.4 -16.4" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+        <g stroke="none" transform="rotate(-10 -1 -19)">
+          <rect x="-7" y="-20.3" width="11.6" height="2.6" rx="1.3" fill="#D9A85F"/>
+          <rect x="4.6" y="-20" width="3.6" height="1.9" rx=".95" fill="#7A4A22"/>
+        </g>
+      </g>
+
+      <g id="ck-pg-fan-d" fill="currentColor" stroke="currentColor">
+        <circle cx="0" cy="-13" r="2.6" stroke="none"/>
+        <path d="M-2.4 -10.6 L2.4 -10.6 L3 -4.4 L-3 -4.4 Z" stroke="none"/>
+        <path d="M-2.6 -4.4 L-2.1 0 L-0.5 0 L-0.4 -4.4 Z" stroke="none"/>
+        <path d="M0.4 -4.4 L0.5 0 L2.1 0 L2.6 -4.4 Z" stroke="none"/>
+        <path d="M-2.4 -10 L-6 -16.2" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M2.4 -10 L6 -16.2" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M-6.2 -16.4 Q0 -21.8 6.2 -16.4" fill="none" stroke="#F5C531" stroke-width="1.9" stroke-linecap="round"/>
+      </g>
     </defs>
 
     <rect width="200" height="130" fill="url(#ck-pg-sky)"/>
@@ -227,15 +270,29 @@
     </g>
 
     <path d="M0 60 L200 60 L200 86 L0 86 Z" fill="#12454A" opacity=".6"/>
-    <g fill="#8FC9BF" opacity=".45">
-      <circle cx="10" cy="68" r="2"/><circle cx="24" cy="72" r="2"/><circle cx="38" cy="66" r="2"/>
-      <circle cx="52" cy="73" r="2"/><circle cx="66" cy="67" r="2"/><circle cx="80" cy="72" r="2"/>
-      <circle cx="94" cy="66" r="2"/><circle cx="108" cy="73" r="2"/><circle cx="122" cy="67" r="2"/>
-      <circle cx="136" cy="72" r="2"/><circle cx="150" cy="66" r="2"/><circle cx="164" cy="73" r="2"/>
-      <circle cx="178" cy="67" r="2"/><circle cx="192" cy="72" r="2"/>
-      <circle cx="17" cy="79" r="2"/><circle cx="45" cy="79" r="2"/><circle cx="73" cy="79" r="2"/>
-      <circle cx="101" cy="79" r="2"/><circle cx="129" cy="79" r="2"/><circle cx="157" cy="79" r="2"/>
-      <circle cx="185" cy="79" r="2"/>
+
+    <g opacity=".38" style="color:#8FC9BF">
+      <g class="ck-fan" style="animation-delay:-.2s"><use href="#ck-pg-fan-a" transform="translate(10,77) scale(.7)"/></g>
+      <g class="ck-fan" style="animation-delay:-1.1s"><use href="#ck-pg-fan-b" transform="translate(32,77) scale(.7)"/></g>
+      <g class="ck-fan" style="animation-delay:-.6s"><use href="#ck-pg-fan-a" transform="translate(54,77) scale(.7)"/></g>
+      <g class="ck-fan" style="animation-delay:-1.5s"><use href="#ck-pg-fan-d" transform="translate(76,77) scale(.7)"/></g>
+      <g class="ck-fan" style="animation-delay:-.4s"><use href="#ck-pg-fan-b" transform="translate(98,77) scale(.7)"/></g>
+      <g class="ck-fan" style="animation-delay:-1.3s"><use href="#ck-pg-fan-a" transform="translate(120,77) scale(.7)"/></g>
+      <g class="ck-fan" style="animation-delay:-.8s"><use href="#ck-pg-fan-c" transform="translate(142,77) scale(.7)"/></g>
+      <g class="ck-fan" style="animation-delay:-1.7s"><use href="#ck-pg-fan-b" transform="translate(164,77) scale(.7)"/></g>
+      <g class="ck-fan" style="animation-delay:-.5s"><use href="#ck-pg-fan-a" transform="translate(186,77) scale(.7)"/></g>
+    </g>
+
+    <g opacity=".62">
+      <g class="ck-fan" style="animation-delay:-.9s"><use href="#ck-pg-fan-b" transform="translate(6,86) scale(.95)" style="color:#8FC9BF"/></g>
+      <g class="ck-fan" style="animation-delay:-.1s"><use href="#ck-pg-fan-a" transform="translate(28,86) scale(.95)" style="color:#F5C531"/></g>
+      <g class="ck-fan" style="animation-delay:-1.4s"><use href="#ck-pg-fan-d" transform="translate(50,86) scale(.95)" style="color:#8FC9BF"/></g>
+      <g class="ck-fan" style="animation-delay:-.7s"><use href="#ck-pg-fan-a" transform="translate(72,86) scale(.95)" style="color:#8FC9BF"/></g>
+      <g class="ck-fan" style="animation-delay:-1.6s"><use href="#ck-pg-fan-c" transform="translate(94,86) scale(.95)" style="color:#F5C531"/></g>
+      <g class="ck-fan" style="animation-delay:-.3s"><use href="#ck-pg-fan-b" transform="translate(116,86) scale(.95)" style="color:#8FC9BF"/></g>
+      <g class="ck-fan" style="animation-delay:-1.2s"><use href="#ck-pg-fan-a" transform="translate(138,86) scale(.95)" style="color:#8FC9BF"/></g>
+      <g class="ck-fan" style="animation-delay:-.55s"><use href="#ck-pg-fan-d" transform="translate(160,86) scale(.95)" style="color:#F5C531"/></g>
+      <g class="ck-fan" style="animation-delay:-1.8s"><use href="#ck-pg-fan-b" transform="translate(182,86) scale(.95)" style="color:#8FC9BF"/></g>
     </g>
 
     <rect x="0" y="86" width="200" height="44" fill="url(#ck-pg-turf)"/>
@@ -258,7 +315,7 @@
       <path d="M64 58 L90 58 L91 66 L63 66 Z" fill="#FFD95C"/>
       <path d="M86 60 L104 47 L109 54 L90 68 Z" fill="#F5C531"/>
       <circle cx="76" cy="48" r="8.5" fill="#1B3A4A"/>
-      <path d="M68 46 A8.5 8.5 0 0 1 84 45 L84 41 A8.5 8.5 0 0 0 68 42 Z" fill="#24506333"/>
+      <path d="M68 46 A8.5 8.5 0 0 1 84 45 L84 41 A8.5 8.5 0 0 0 68 42 Z" fill="#245063" opacity=".2"/>
       <g stroke="#8FA6B4" stroke-width="1" opacity=".9">
         <line x1="80" y1="49" x2="86" y2="49"/>
         <line x1="80" y1="52" x2="85" y2="52"/>
