@@ -139,6 +139,7 @@
 
 <!-- ===== START preethigovindarajan ===== -->
 <section class="card" id="preethigovindarajan" style="background:#FFF3B0;border-color:#E6C200;">
+  <img src="images/preethigovindarajan.jpg" alt="Preethi" style="width:100%;border-radius:8px;margin-bottom:12px;display:block;">
   <h2><a href="https://github.com/preethigovindarajan">@preethigovindarajan</a></h2>
   <p class="who">Preethi &middot; Communications</p>
   <p>Claimed! Glad to be building on the wall.</p>
@@ -181,9 +182,59 @@
   <style>
     #meghna-a11y h2 a { color:#2A9D8F; border-bottom-color:#2A9D8F; }
     #meghna-a11y:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(42,157,143,0.25); }
+    #meghna-a11y .sunflower { display:block; margin:8px 0 4px; }
+    #meghna-a11y .sunflower-sway,
+    #meghna-a11y .sunflower-petals {
+      transform-box: view-box;
+    }
+    #meghna-a11y .sunflower-sway { transform-origin: 50px 95px; }
+    #meghna-a11y .sunflower-petals { transform-origin: 50px 50px; }
+    @media (prefers-reduced-motion: no-preference) {
+      #meghna-a11y .sunflower-sway { animation: meghna-a11y-sway 6s ease-in-out infinite; }
+      #meghna-a11y .sunflower-petals { animation: meghna-a11y-spin 40s linear infinite; }
+    }
+    @keyframes meghna-a11y-sway {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    @keyframes meghna-a11y-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
   </style>
   <h2><a href="https://github.com/meghna-a11y">@meghna-a11y</a></h2>
-  <p class="who">Meghna &middot; Program Design</p>
+  <p class="who">Meghna &middot; Monitoring and Evaluation Lead</p>
+  <svg class="sunflower" viewBox="0 0 100 100" width="90" height="90" role="img" aria-label="Sunflower illustration">
+    <g class="sunflower-sway">
+      <line x1="50" y1="65" x2="50" y2="95" stroke="#5B8C3E" stroke-width="3" stroke-linecap="round"/>
+      <path d="M50 82 Q38 80 36 90 Q46 90 50 82Z" fill="#6FA84A"/>
+      <g class="sunflower-petals">
+        <ellipse cx="50" cy="22" rx="9" ry="20" fill="#F4B400" transform="rotate(0 50 50)"/>
+        <ellipse cx="50" cy="22" rx="9" ry="20" fill="#F4B400" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="22" rx="9" ry="20" fill="#F4B400" transform="rotate(90 50 50)"/>
+        <ellipse cx="50" cy="22" rx="9" ry="20" fill="#F4B400" transform="rotate(135 50 50)"/>
+        <ellipse cx="50" cy="22" rx="9" ry="20" fill="#F4B400" transform="rotate(180 50 50)"/>
+        <ellipse cx="50" cy="22" rx="9" ry="20" fill="#F4B400" transform="rotate(225 50 50)"/>
+        <ellipse cx="50" cy="22" rx="9" ry="20" fill="#F4B400" transform="rotate(270 50 50)"/>
+        <ellipse cx="50" cy="22" rx="9" ry="20" fill="#F4B400" transform="rotate(315 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="15" fill="#4A2E19"/>
+      <g fill="#2F1B0C">
+        <circle cx="50" cy="42" r="1.6"/>
+        <circle cx="57" cy="45" r="1.6"/>
+        <circle cx="58" cy="52" r="1.6"/>
+        <circle cx="53" cy="58" r="1.6"/>
+        <circle cx="46" cy="58" r="1.6"/>
+        <circle cx="42" cy="52" r="1.6"/>
+        <circle cx="43" cy="45" r="1.6"/>
+        <circle cx="50" cy="50" r="1.6"/>
+        <circle cx="50" cy="35" r="1.3"/>
+        <circle cx="62" cy="50" r="1.3"/>
+        <circle cx="50" cy="63" r="1.3"/>
+        <circle cx="38" cy="50" r="1.3"/>
+      </g>
+    </g>
+  </svg>
 </section>
 <!-- ===== END meghna-a11y ===== -->
 
@@ -192,6 +243,7 @@
   <h2><a href="https://github.com/gayathri792">@gayathri792</a></h2>
   <p style="margin:0; font-size:.9rem;">Gayathri P</p>
   <p style="margin:0; color:var(--gold); font-size:.85rem;">Programme Design Lead, Vidhya Vidhai Foundation</p>
+  <p style="margin:4px 0 0; color:var(--dim); font-size:.75rem; font-style:italic;">designing what learning would look like in tamilnadu</p>
 </section>
 <!-- ===== END gayathri792 ===== -->
 
