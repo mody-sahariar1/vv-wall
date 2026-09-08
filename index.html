@@ -180,7 +180,67 @@
     #Poomuthu-G .who { color:#356B68; }
     #Poomuthu-G .quote { color:#3F7A77; font-style:italic; font-size:.8rem; margin:10px 0 0; }
     #Poomuthu-G:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(47,126,124,0.30); }
+    #Poomuthu-G .hm { width:100%; display:block; border-radius:8px; margin-bottom:12px; }
+    #Poomuthu-G .hm-mist { animation:hm-pg-drift 26s ease-in-out infinite; }
+    #Poomuthu-G .hm-bird { animation:hm-pg-glide 18s linear infinite; }
+    @keyframes hm-pg-drift { 0%,100% { transform:translateX(-6px); opacity:.55; } 50% { transform:translateX(8px); opacity:.8; } }
+    @keyframes hm-pg-glide { from { transform:translateX(-30px); } to { transform:translateX(230px); } }
+    @media (prefers-reduced-motion: reduce) {
+      #Poomuthu-G .hm-mist, #Poomuthu-G .hm-bird { animation:none; }
+    }
   </style>
+  <svg class="hm" viewBox="0 0 200 130" role="img" aria-label="Illustration of snow-capped Himalayan peaks at dawn">
+    <defs>
+      <linearGradient id="hm-pg-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#2F6E86"/>
+        <stop offset="45%" stop-color="#79AEC0"/>
+        <stop offset="100%" stop-color="#F2E3C8"/>
+      </linearGradient>
+      <linearGradient id="hm-pg-near" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#3E6B7E"/>
+        <stop offset="100%" stop-color="#24485A"/>
+      </linearGradient>
+      <radialGradient id="hm-pg-sun">
+        <stop offset="0%" stop-color="#FFF6DC"/>
+        <stop offset="100%" stop-color="#F6D79B"/>
+      </radialGradient>
+    </defs>
+
+    <rect width="200" height="130" fill="url(#hm-pg-sky)"/>
+
+    <circle cx="156" cy="30" r="16" fill="#FFF0C8" opacity=".18"/>
+    <circle cx="156" cy="30" r="8.5" fill="url(#hm-pg-sun)"/>
+
+    <g class="hm-bird" fill="none" stroke="#1E4356" stroke-width="1.1" stroke-linecap="round" opacity=".55">
+      <path d="M26 34 l4 -3 l4 3"/>
+      <path d="M38 28 l3 -2.4 l3 2.4"/>
+    </g>
+
+    <path d="M0 78 L22 58 L38 70 L58 48 L78 68 L96 54 L118 74 L140 56 L162 72 L182 60 L200 76 L200 130 L0 130 Z"
+          fill="#9FBFD0" opacity=".75"/>
+
+    <path d="M0 92 L30 66 L52 84 L74 60 L100 88 L124 64 L150 86 L176 68 L200 90 L200 130 L0 130 Z"
+          fill="#6E93A8"/>
+    <g fill="#F4FAFD" opacity=".85">
+      <path d="M74 60 L81 69 L78 67 L75 71 L71 66 L68 69 Z"/>
+      <path d="M124 64 L131 73 L128 71 L125 75 L121 70 L118 73 Z"/>
+      <path d="M176 68 L182 76 L179 74 L176 78 L172 73 L170 76 Z"/>
+    </g>
+
+    <path d="M28 130 L82 46 L100 70 L116 38 L172 130 Z" fill="url(#hm-pg-near)"/>
+    <g fill="#FBFEFF">
+      <path d="M116 38 L131 62 L126 58 L121 65 L116 59 L111 66 L106 58 Z"/>
+      <path d="M82 46 L94 62 L90 58 L86 64 L82 57 L78 63 L70 64 Z"/>
+    </g>
+    <g stroke="#1B3A4A" stroke-width=".8" opacity=".45" stroke-linecap="round">
+      <line x1="116" y1="40" x2="126" y2="70"/>
+      <line x1="116" y1="40" x2="108" y2="66"/>
+      <line x1="82" y1="48" x2="74" y2="76"/>
+    </g>
+
+    <ellipse class="hm-mist" cx="100" cy="104" rx="86" ry="7" fill="#FFFFFF" opacity=".65"/>
+    <ellipse class="hm-mist" cx="60" cy="115" rx="58" ry="5" fill="#FFFFFF" opacity=".45" style="animation-delay:-9s"/>
+  </svg>
   <h2><a href="https://github.com/Poomuthu-G">@Poomuthu-G</a></h2>
   <p class="who">Poomuthu &middot; DEEP Cuddalore</p>
   <p class="quote">&ldquo;Learning by building, one commit at a time.&rdquo;</p>
@@ -268,13 +328,41 @@
 <!-- ===== END ramprakashkrishnan ===== -->
 
 <!-- ===== START ungalravi ===== -->
-<section class="card" id="ungalravi" style="background:#E3F4FC;border-color:#87CEEB;border-width:2px;">
+<section class="card" id="ungalravi" style="position:relative;overflow:hidden;background:#E3F4FC;border-color:#87CEEB;border-width:2px;">
   <style>
     #ungalravi h2 a { color:#0B6FA4; border-bottom-color:#87CEEB; }
+    #ungalravi .rk-kids { position:absolute; right:-6px; bottom:-6px; width:104px; height:auto; opacity:.85; pointer-events:none; }
+    #ungalravi .rk-content { position:relative; z-index:1; }
+    #ungalravi .rk-bob1 { animation:rk-bob 2.6s ease-in-out infinite; }
+    #ungalravi .rk-bob2 { animation:rk-bob 2.6s ease-in-out infinite; animation-delay:.4s; }
+    #ungalravi .rk-arm { transform-box:fill-box; transform-origin:0% 100%; animation:rk-wave 1.6s ease-in-out infinite; }
+    @keyframes rk-bob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-3px); } }
+    @keyframes rk-wave { 0%,100% { transform:rotate(0deg); } 50% { transform:rotate(-22deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      #ungalravi .rk-bob1, #ungalravi .rk-bob2, #ungalravi .rk-arm { animation:none; }
+    }
   </style>
-  <h2><a href="https://github.com/ungalravi">@ungalravi</a></h2>
-  <p class="who">Ravikumar V &middot; DEEP Nagapattinam</p>
-  <p>Kalvi Valar Kadal Nagai</p>
+  <svg class="rk-kids" viewBox="0 0 100 70" role="img" aria-hidden="true">
+    <g class="rk-bob1">
+      <circle cx="28" cy="18" r="9" fill="#FFD9A0"/>
+      <path d="M19 16 a9 7 0 0 1 18 0 Z" fill="#3E2723"/>
+      <rect x="18" y="27" width="20" height="22" rx="6" fill="#0B6FA4"/>
+      <rect x="14" y="30" width="8" height="16" rx="4" fill="#FFD9A0" class="rk-arm"/>
+      <rect x="12" y="34" width="12" height="9" rx="2" fill="#E6C200"/>
+    </g>
+    <g class="rk-bob2">
+      <circle cx="66" cy="22" r="8" fill="#FFC98B"/>
+      <path d="M58 20 a8 6 0 0 1 16 0 Z" fill="#212121"/>
+      <rect x="57" y="30" width="18" height="20" rx="6" fill="#E07A5F"/>
+      <rect x="60" y="16" width="12" height="8" rx="2" fill="#FBF3DA" stroke="#0B6FA4" stroke-width="1"/>
+    </g>
+    <rect x="6" y="50" width="88" height="4" rx="2" fill="#87CEEB" opacity=".6"/>
+  </svg>
+  <div class="rk-content">
+    <h2><a href="https://github.com/ungalravi">@ungalravi</a></h2>
+    <p class="who">Ravikumar V &middot; DEEP Nagapattinam</p>
+    <p>Kalvi Valar Kadal Nagai</p>
+  </div>
 </section>
 <!-- ===== END ungalravi ===== -->
 
@@ -369,6 +457,8 @@
       margin:2px 0 8px; transition: background 0.2s ease, color 0.2s ease;
     }
     #meghna-a11y .linkedin-link:hover { background:#2A9D8F; color:#FBF3DA; }
+    #meghna-a11y .name { font-weight:700; color:#1B5E20; margin:0 0 2px; font-size:.9rem; }
+    #meghna-a11y .role { font-style:italic; color:#3F5122; font-size:.75rem; margin:0 0 8px; }
     #meghna-a11y .tagline { font-weight:300; font-size:.75rem; margin:0 0 8px; color:#5B6B7B; }
     #meghna-a11y .sunflower { display:block; margin:8px 0 4px; }
     #meghna-a11y .sunflower-sway,
@@ -392,7 +482,8 @@
   </style>
   <h2><a href="https://github.com/meghna-a11y">@meghna-a11y</a></h2>
   <a class="linkedin-link" href="https://www.linkedin.com/in/meghna-ganesh-23250a309" target="_blank" rel="noopener" aria-label="Meghna's LinkedIn profile">LinkedIn</a>
-  <p class="who">Meghna aka Meghuuu :) &middot; Monitoring and Evaluation Lead</p>
+  <p class="name">Meghna aka Meghuuu :)</p>
+  <p class="role">Monitoring and Evaluation Lead</p>
   <p class="tagline">Creating impact with passion &amp; purpose</p>
   <svg class="sunflower" viewBox="0 0 100 100" width="90" height="90" role="img" aria-label="Sunflower illustration">
     <g class="sunflower-sway">
