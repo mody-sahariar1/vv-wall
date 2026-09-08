@@ -354,7 +354,82 @@
     #saravana-ppe h2 a { color:#2E7D32; border-bottom-color:#2E7D32; }
     #saravana-ppe .who { color:#1B5E20; }
     #saravana-ppe .note { margin:8px 0 0; font-size:.82rem; line-height:1.55; color:#2F4F33; }
+    #saravana-ppe .bk { width:100%; display:block; border-radius:10px; margin:0 0 14px; }
+    #saravana-ppe .bk-lit { animation:bk-sk-glow 5s ease-in-out infinite; transform-box:view-box; transform-origin:46px 57px; }
+    @keyframes bk-sk-glow { 0%,100% { opacity:.82; } 50% { opacity:1; } }
+    @media (prefers-reduced-motion: reduce) {
+      #saravana-ppe .bk-lit { animation:none; opacity:.92; }
+    }
   </style>
+  <svg class="bk" viewBox="0 24 182 94" role="img" aria-label="Illustration of an open book lit by a small desk lamp, in forest green tones">
+    <defs>
+      <linearGradient id="bkSkPage" x1="0" y1="0" x2="0.35" y2="1">
+        <stop offset="0" stop-color="#F7FAF2"/>
+        <stop offset="1" stop-color="#DBE7D3"/>
+      </linearGradient>
+      <linearGradient id="bkSkCover" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#2E7D32"/>
+        <stop offset="1" stop-color="#14501A"/>
+      </linearGradient>
+      <linearGradient id="bkSkShade" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#43964A"/>
+        <stop offset="1" stop-color="#1B5E20"/>
+      </linearGradient>
+      <linearGradient id="bkSkPole" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#1B5E20"/>
+        <stop offset="0.45" stop-color="#4C9E52"/>
+        <stop offset="1" stop-color="#1B5E20"/>
+      </linearGradient>
+      <linearGradient id="bkSkBeam" gradientUnits="userSpaceOnUse" x1="46" y1="56" x2="76" y2="102">
+        <stop offset="0" stop-color="#FFF3C4" stop-opacity="0.5"/>
+        <stop offset="0.55" stop-color="#FFF3C4" stop-opacity="0.18"/>
+        <stop offset="1" stop-color="#FFF3C4" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="bkSkHalo">
+        <stop offset="0" stop-color="#FFEEA8" stop-opacity="0.38"/>
+        <stop offset="1" stop-color="#FFEEA8" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <!-- ambient halo around the lamp head -->
+    <circle class="bk-lit" cx="46" cy="57" r="27" fill="url(#bkSkHalo)"/>
+
+    <!-- lamp: base, pole, shade -->
+    <ellipse cx="30" cy="104" rx="20" ry="3.4" fill="#1B5E20" opacity="0.22"/>
+    <rect x="15" y="97" width="30" height="6" rx="3" fill="url(#bkSkCover)"/>
+    <path d="M30 97 L30 60 Q30 45 38 39" fill="none" stroke="url(#bkSkPole)" stroke-width="3.2" stroke-linecap="round"/>
+    <circle cx="30" cy="60" r="2.6" fill="#1B5E20"/>
+    <g transform="rotate(-22 44 50)">
+      <path d="M37 38 Q44 34.6 51 38 L58 57 Q44 61 30 57 Z" fill="url(#bkSkShade)"/>
+      <path d="M37 38 Q44 34.6 51 38 L49.6 34 Q44 31.6 38.4 34 Z" fill="#4C9E52" opacity="0.55"/>
+      <ellipse cx="44" cy="58" rx="14" ry="3.4" fill="#1B5E20"/>
+      <ellipse class="bk-lit" cx="44" cy="57.6" rx="11.4" ry="2.6" fill="#FFF3C4"/>
+    </g>
+
+    <!-- book: cover thickness, then the two open pages -->
+    <ellipse cx="112" cy="97" rx="57" ry="5" fill="#1B5E20" opacity="0.2"/>
+    <path d="M57 79 L55 84 Q85 87.5 112 93 L112 88 Q85 82 57 79 Z" fill="url(#bkSkCover)"/>
+    <path d="M167 79 L169 84 Q139 87.5 112 93 L112 88 Q139 82 167 79 Z" fill="url(#bkSkCover)"/>
+    <path d="M112 75 Q85 68 59 66 L57 79 Q85 82 112 88 Z" fill="url(#bkSkPage)" stroke="#B7CDB0" stroke-width="0.8" stroke-linejoin="round"/>
+    <path d="M112 75 Q139 68 165 66 L167 79 Q139 82 112 88 Z" fill="url(#bkSkPage)" stroke="#B7CDB0" stroke-width="0.8" stroke-linejoin="round"/>
+    <path d="M112 75 L112 88" stroke="#1B5E20" stroke-width="1.6" stroke-linecap="round" opacity="0.35"/>
+
+    <!-- lines of text on each page -->
+    <g stroke="#8FAE8C" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0.85">
+      <path d="M65 70.5 Q84 75 103 77"/>
+      <path d="M65 74 Q84 78.8 103 80.5"/>
+      <path d="M65 77.5 Q80 82 95 84"/>
+      <path d="M159 70.5 Q140 75 121 77"/>
+      <path d="M159 74 Q140 78.8 121 80.5"/>
+      <path d="M159 77.5 Q144 82 129 84"/>
+    </g>
+
+    <!-- bookmark ribbon -->
+    <path d="M110 76 L115 76.6 L115 97 L112.4 93.6 L110 96.4 Z" fill="#B8860B"/>
+
+    <!-- light falling from the shade onto the page -->
+    <path class="bk-lit" d="M33.6 61.7 L59.6 51.2 L104 96 L52 104 Z" fill="url(#bkSkBeam)"/>
+  </svg>
   <h2><a href="https://github.com/saravana-ppe">@saravana-ppe</a></h2>
   <p class="who">Saravana Kumar &middot; DEEP Sivagangai</p>
   <p class="note">Working alongside Collector, CEO, Teachers, Students for the welfare of the students.</p>
