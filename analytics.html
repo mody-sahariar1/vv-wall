@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VV Demo Brain &mdash; How this page gets built</title>
+<style>
+  :root { --bg:#FBF3DA; --fg:#24303F; --dim:#5B6B7B; --line:#E2D6B4; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font-family:ui-monospace,SFMono-Regular,Menlo,monospace; line-height:1.6; padding:48px 24px; }
+  header, main { max-width:900px; margin:0 auto; }
+  header { margin-bottom:36px; }
+  h1 { font-size:1.7rem; margin:0 0 8px; }
+  .sub { color:var(--dim); margin:0 0 4px; }
+  .back { display:inline-block; margin-bottom:20px; color:var(--fg); font-size:.82rem;
+           text-decoration:none; border-bottom:1px dotted var(--dim); }
+  footer { max-width:900px; margin:44px auto 0; color:var(--dim); font-size:.8rem;
+            border-top:1px solid var(--line); padding-top:16px; }
+
+ .ac{--ac-ink:#24303F;--ac-ink2:#5B6B7B;--ac-line:#E2D6B4;--ac-surface:#FBF3DA;color:var(--ac-ink)}
+ .ac h2{margin:0 0 4px;font-size:1.1rem}
+ .ac .ac-cap{color:var(--ac-ink2);font-size:.8rem;margin:0 0 18px}
+ .ac h3{font-size:.82rem;margin:0 0 2px;letter-spacing:.04em;text-transform:uppercase;color:var(--ac-ink)}
+ .ac .ac-sub{color:var(--ac-ink2);font-size:.76rem;margin:0 0 14px;line-height:1.6}
+ .ac .ac-block{margin:0 0 30px}
+ .ac .ac-svg{width:100%;height:auto;display:block;overflow:visible}
+ .ac .ac-ylab{font:500 11px ui-monospace,SFMono-Regular,Menlo,monospace;fill:var(--ac-ink)}
+ .ac .ac-val{font:600 11px ui-monospace,SFMono-Regular,Menlo,monospace;fill:var(--ac-ink)}
+ .ac .ac-drop{font:400 10.5px ui-monospace,SFMono-Regular,Menlo,monospace;fill:var(--ac-ink2)}
+ .ac .ac-tick{font:400 10px ui-monospace,SFMono-Regular,Menlo,monospace;fill:var(--ac-ink2)}
+ .ac .ac-grid{stroke:var(--ac-line);stroke-width:1}
+ .ac .ac-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));gap:1px;
+   background:var(--ac-line);border:1px solid var(--ac-line);border-radius:8px;overflow:hidden;margin:0 0 20px}
+ .ac .ac-kpi{background:var(--ac-surface);padding:11px 13px}
+ .ac .ac-kpi .k{display:block;font-size:.66rem;color:var(--ac-ink2);letter-spacing:.03em;margin-bottom:4px}
+ .ac .ac-kpi .v{display:block;font-size:1.45rem;font-weight:600;line-height:1.1;color:var(--ac-ink)}
+ .ac .ac-kpi .n{display:block;font-size:.64rem;color:var(--ac-ink2);margin-top:3px}
+ .ac .ac-stack{display:flex;height:24px;border-radius:4px;overflow:hidden;gap:2px;background:var(--ac-surface);margin:0 0 8px}
+ .ac .ac-stack span{display:block;height:100%}
+ .ac .ac-legend{display:flex;flex-wrap:wrap;gap:15px;font-size:.73rem;color:var(--ac-ink2);margin:0}
+ .ac .ac-legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px}
+ .ac .ac-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
+ .ac ul.ac-list{list-style:none;margin:0;padding:0}
+ .ac ul.ac-list li{padding:8px 0;border-bottom:1px solid var(--ac-line);font-size:.8rem;display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline}
+ .ac ul.ac-list li:last-child{border-bottom:none}
+ .ac ul.ac-list a{color:var(--ac-ink);text-decoration:none;border-bottom:1px dotted var(--ac-ink2)}
+ .ac .ac-nm{color:var(--ac-ink2);font-size:.74rem}
+ .ac .ac-note{color:var(--ac-ink2);font-size:.72rem;flex-basis:100%}
+ .ac code{font-size:.95em;background:rgba(36,48,63,.06);padding:1px 4px;border-radius:3px}
+ .ac .ac-cmd{flex-basis:100%;display:block;margin-top:5px;font-size:.68rem;line-height:1.5;
+   background:rgba(36,48,63,.06);border-radius:4px;padding:6px 8px;overflow-wrap:anywhere;white-space:pre-wrap}
+ .ac .ac-reads{margin:0;padding:0;list-style:none;display:grid;gap:11px}
+ .ac .ac-reads li{font-size:.79rem;line-height:1.6;color:var(--ac-ink2);border-left:2px solid var(--ac-line);padding-left:13px}
+ .ac .ac-reads b{color:var(--ac-ink);font-weight:600}
+ .ac details{margin-top:6px;font-size:.75rem;color:var(--ac-ink2)}
+ .ac summary{cursor:pointer;padding:5px 0}
+ .ac table{border-collapse:collapse;width:100%;margin-top:8px;font-size:.74rem}
+ .ac th,.ac td{text-align:left;padding:5px 10px 5px 0;border-bottom:1px solid var(--ac-line);color:var(--ac-ink2)}
+ .ac th{color:var(--ac-ink);font-weight:600}
+ .ac .ac-num{font-variant-numeric:tabular-nums;color:var(--ac-ink)}
+ .ac .ac-tip{position:absolute;pointer-events:none;background:var(--ac-surface);border:1px solid var(--ac-ink2);
+   border-radius:6px;padding:5px 9px;font-size:.72rem;color:var(--ac-ink);white-space:nowrap;opacity:0;transition:opacity .12s;
+   box-shadow:0 3px 10px rgba(36,48,63,.16);z-index:5}
+ .ac .ac-wrap{position:relative}
+ .ac .boards{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:12px;margin:0 0 8px}
+ .ac .bd{border:1px solid var(--ac-line);border-radius:12px;padding:15px 16px 13px;background:rgba(255,255,255,.34)}
+ .ac .bd .e{font-size:1.4rem;line-height:1;display:block;margin-bottom:9px}
+ .ac .bd .t{margin:0 0 6px;font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ac-ink2)}
+ .ac .bd .v{margin:0 0 2px;font-size:1.3rem;font-weight:600;color:var(--ac-ink);line-height:1.15}
+ .ac .bd .w{margin:0 0 7px;font-size:.8rem;color:var(--ac-ink)}
+ .ac .bd .w a{color:var(--ac-ink);text-decoration:none;border-bottom:1px dotted var(--ac-ink2)}
+ .ac .bd .n{margin:0;font-size:.7rem;color:var(--ac-ink2);line-height:1.5}
+ .ac .calm{font-size:.86rem;line-height:1.75;color:var(--ac-ink2);max-width:660px;margin:0 0 14px}
+ .ac .calm b{color:var(--ac-ink);font-weight:600}
+ .ac .ac-glossary{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:1px;margin:0;
+   background:var(--ac-line);border:1px solid var(--ac-line);border-radius:8px;overflow:hidden}
+ .ac .ac-term{background:var(--ac-surface);padding:12px 14px}
+ .ac .ac-glossary dt{font-weight:600;font-size:.83rem;color:var(--ac-ink);margin:0 0 4px}
+ .ac .ac-glossary dd{margin:0;font-size:.74rem;line-height:1.55;color:var(--ac-ink2)}
+ .ac .ac-jargon{display:inline-block;margin-left:7px;font-weight:400;font-size:.67rem;color:var(--ac-ink2);
+   border:1px solid var(--ac-line);border-radius:20px;padding:1px 7px;vertical-align:1px}
+ .ac .ac-jargon::before{content:"they call it "}
+ .ac ol.ac-friction{list-style:none;counter-reset:f;margin:16px 0 0;padding:0;display:grid;gap:12px}
+ .ac ol.ac-friction li{counter-increment:f;border:1px solid var(--ac-line);border-radius:10px;padding:13px 15px;background:rgba(255,255,255,.3)}
+ .ac ol.ac-friction h4{margin:0 0 5px;font-size:.83rem;color:var(--ac-ink);font-weight:600}
+ .ac ol.ac-friction h4::before{content:counter(f) ". ";color:var(--ac-ink2);font-weight:400}
+ .ac .ac-eff{margin:0 0 7px;font-size:.77rem;line-height:1.6;color:var(--ac-ink2)}
+ .ac .ac-fix{margin:0;font-size:.77rem;line-height:1.55;color:var(--ac-ink2);border-top:1px dotted var(--ac-line);padding-top:7px}
+ .ac .ac-fix b{color:var(--ac-ink)}
+ .ac .ac-more{display:inline-block;margin:2px 0 0;font-size:.8rem;color:var(--ac-ink);
+   text-decoration:none;border-bottom:1px solid var(--ac-ink2);padding-bottom:1px}
+ .ac .ac-foot{margin:22px 0 0;padding-top:14px;border-top:1px solid var(--ac-line);font-size:.72rem;color:var(--ac-ink2)}
+ @media(max-width:560px){.ac .ac-nm{display:none}}
+ .ac .whatson{display:grid;grid-template-columns:repeat(auto-fit,minmax(214px,1fr));gap:1px;
+   background:var(--ac-line);border:1px solid var(--ac-line);border-radius:9px;overflow:hidden}
+ .ac .whatson>div{background:var(--ac-surface);padding:12px 14px}
+ .ac .whatson .wh{display:inline-block;font-size:.61rem;letter-spacing:.09em;text-transform:uppercase;
+   color:#256abf;font-weight:600;margin-bottom:6px}
+ .ac .whatson p{margin:0;font-size:.75rem;line-height:1.55;color:var(--ac-ink2)}
+ .ac .whatson a{color:var(--ac-ink);text-decoration:none;border-bottom:1px solid #256abf}
+ #homework{grid-column:1/-1;border:1px solid #256abf;border-left:4px solid #256abf;border-radius:10px;
+   padding:20px 22px;margin-bottom:8px;background:rgba(255,255,255,.34)}
+ #homework .hw-tag{display:inline-block;font-size:.64rem;letter-spacing:.09em;text-transform:uppercase;
+   color:#FBF3DA;background:#256abf;border-radius:20px;padding:3px 11px;margin:0 0 10px}
+ #homework h2{margin:0 0 4px;font-size:1.15rem}
+ #homework .hw-lead{color:var(--ac-ink2);font-size:.8rem;margin:0 0 14px;max-width:640px;line-height:1.6}
+ #homework .hw-box{position:relative;margin:0 0 12px}
+ #homework pre{margin:0;background:rgba(36,48,63,.06);border:1px solid var(--ac-line);border-radius:8px;
+   padding:14px 15px;padding-right:86px;font-size:.73rem;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere;
+   font-family:inherit;color:var(--ac-ink)}
+ #homework .hw-copy{position:absolute;top:9px;right:9px;font:inherit;font-size:.68rem;cursor:pointer;
+   background:#256abf;color:#FBF3DA;border:none;border-radius:6px;padding:5px 12px;transition:background .15s}
+ #homework .hw-copy:hover{background:#184f95}
+ #homework .hw-warn{margin:0 0 14px;font-size:.75rem;line-height:1.6;color:#8a3d16;
+   background:rgba(235,104,52,.10);border:1px solid rgba(235,104,52,.35);border-radius:8px;padding:9px 12px}
+ #homework ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+ #homework ul li{font-size:.78rem;line-height:1.6;color:var(--ac-ink2);
+   border-left:2px solid var(--ac-line);padding-left:12px}
+ #homework ul b{color:var(--ac-ink)}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="index.html">&larr; back to the wall</a>
+  <h1>How this page gets built</h1>
+  <p class="sub">A quiet look at what everyone has been making together. Every number is counted automatically from the project&rsquo;s own history &mdash; nothing here is typed by hand, and nothing is a ranking.</p>
+  <p class="sub">6 saved changes &middot; 0 draft copies &middot; 13 tiles &middot; 8 Sep 2026, 11:41</p>
+</header>
+
+<main class="ac">
+
+<div class="ac-kpis">
+  <div class="ac-kpi"><span class="k">People building</span><span class="v">1</span><span class="n">have work in this project</span></div>
+  <div class="ac-kpi"><span class="k">Tiles live</span><span class="v">0</span><span class="n">of 13 on the page</span></div>
+  <div class="ac-kpi"><span class="k">Saved changes</span><span class="v">6</span><span class="n">6 built &#183; 0 untangling</span></div>
+  <div class="ac-kpi"><span class="k">Ready to publish</span><span class="v">0</span><span class="n">finished, one step away</span></div>
+  <div class="ac-kpi"><span class="k">Busiest half hour</span><span class="v">3</span><span class="n">8 Sep, 11:00</span></div>
+</div>
+
+<div class="ac-block">
+  <h3>Little things worth noticing</h3>
+  <p class="ac-sub">Not a scoreboard &mdash; just some nice moments the history happened to record. Everyone here helped build the same wall.</p>
+  <div class="boards"></div>
+</div>
+
+<div class="ac-block">
+  <h3>The path to the page</h3>
+  <p class="ac-sub">Claiming a tile, writing something, and publishing it are three different steps. Each bar counts the people who cleared that step; the line beneath is the work still waiting there.</p>
+  <svg class="ac-svg" viewBox="0 0 844 250" role="img" aria-label="The path from a tile on the wall to a tile live on the page">
+<text x="166" y="21.0" text-anchor="end" class="ac-ylab">Tiles on the wall</text>
+<rect x="178" y="0" width="620" height="34" rx="4" fill="#6da7ec"/>
+<rect x="178" y="0" width="6" height="34" fill="#6da7ec"/>
+<text x="808" y="21.0" class="ac-val">13</text>
+<text x="188" y="51" class="ac-drop">&#8595; 12 of these tiles are completely open — the quickest win on the board</text>
+<text x="166" y="75.0" text-anchor="end" class="ac-ylab">Started working</text>
+<rect x="178" y="54" width="48" height="34" rx="4" fill="#3987e5"/>
+<rect x="178" y="54" width="6" height="34" fill="#3987e5"/>
+<text x="236" y="75.0" class="ac-val">1</text>
+<text x="188" y="105" class="ac-drop">&#8595; 0 people have a draft copy but no saved edits of their own yet</text>
+<text x="166" y="129.0" text-anchor="end" class="ac-ylab">Saved their own work</text>
+<rect x="178" y="108" width="48" height="34" rx="4" fill="#256abf"/>
+<rect x="178" y="108" width="6" height="34" fill="#256abf"/>
+<text x="236" y="129.0" class="ac-val">1</text>
+<text x="188" y="159" class="ac-drop">&#8595; 0 people have finished work ready to publish — listed below</text>
+<text x="166" y="183.0" text-anchor="end" class="ac-ylab">Published it</text>
+<rect x="178" y="162" width="48" height="34" rx="4" fill="#184f95"/>
+<rect x="178" y="162" width="6" height="34" fill="#184f95"/>
+<text x="236" y="183.0" class="ac-val">1</text>
+<text x="188" y="213" class="ac-drop">&#8595; 1 person improved the page for everyone else before claiming a tile</text>
+<text x="166" y="237.0" text-anchor="end" class="ac-ylab">Their tile is live</text>
+<rect x="178" y="216" width="6" height="34" rx="4" fill="#0d366b"/>
+<rect x="178" y="216" width="6" height="34" fill="#0d366b"/>
+<text x="194" y="237.0" class="ac-val">0</text>
+</svg>
+  <details><summary>Show as a table</summary>
+    <table><thead><tr><th>Step</th><th>People</th><th>Means</th></tr></thead><tbody><tr><td>Tiles on the wall</td><td class="ac-num">13</td><td>blocks that exist on the page</td></tr><tr><td>Started working</td><td class="ac-num">1</td><td>made a draft copy, or saved something</td></tr><tr><td>Saved their own work</td><td class="ac-num">1</td><td>at least one batch of their own edits</td></tr><tr><td>Published it</td><td class="ac-num">1</td><td>those edits reached the shared page</td></tr><tr><td>Their tile is live</td><td class="ac-num">0</td><td>and everyone can see it today</td></tr></tbody></table>
+  </details>
+</div>
+
+<div class="ac-block ac-wrap">
+  <h3>When the work happened</h3>
+  <p class="ac-sub">Saved changes reaching the shared page, in half-hour blocks. Two live sessions, two peaks &mdash; and a steady tail of people carrying on by themselves.</p>
+  <svg class="ac-svg" viewBox="0 0 840 170" role="img" aria-label="Saved changes reaching the shared page in 30-minute buckets across 11-12 August 2026, with two sharp spikes during the live sessions">
+<line x1="34" y1="144.0" x2="840" y2="144.0" class="ac-grid"/>
+<text x="26" y="148.0" text-anchor="end" class="ac-tick">0</text>
+<line x1="34" y1="76.0" x2="840" y2="76.0" class="ac-grid"/>
+<text x="26" y="80.0" text-anchor="end" class="ac-tick">25</text>
+<line x1="34" y1="8.0" x2="840" y2="8.0" class="ac-grid"/>
+<text x="26" y="12.0" text-anchor="end" class="ac-tick">50</text>
+<polygon points="34,144 34.0,135.8 840.0,135.8 840.0,144" fill="#2a78d6" fill-opacity="0.10"/>
+<polyline points="34.0,135.8 840.0,135.8" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="34.0" cy="135.8" r="4.5" fill="#2a78d6" stroke="#FBF3DA" stroke-width="2"/>
+<text x="26.0" y="139.8" text-anchor="end" class="ac-val">3 saves &#183; live session</text>
+<rect class="ac-hit" x="34" y="0" width="806" height="144" fill="transparent"/>
+<line class="ac-cross" x1="0" y1="0" x2="0" y2="144" stroke="#5B6B7B" stroke-width="1" opacity="0"/>
+</svg>
+  <div class="ac-tip" id="ac-tip"></div>
+  <details><summary>Show as a table</summary>
+    <table><thead><tr><th>Hour</th><th>Saved changes</th></tr></thead><tbody><tr><td>8 Sep, 11:00&ndash;12:00</td><td class="ac-num">6</td></tr></tbody></table>
+  </details>
+</div>
+
+<div class="ac-cols ac-block">
+  <div>
+    <h3>Ready to publish</h3>
+    <p class="ac-sub">Finished work sitting in draft copies. Copy the line under your name and it is live in about a minute.</p>
+    <ul class="ac-list"></ul>
+  </div>
+  <div>
+    <h3>Tiles still open</h3>
+    <p class="ac-sub">Already on the page, waiting for someone. The shortest route from opening the project to seeing your own work live.</p>
+    <ul class="ac-list"><li><a href="https://github.com/Poomuthu-G">@Poomuthu-G</a><span class="ac-note">tile is on the page and unclaimed</span></li><li><a href="https://github.com/Sab-mantharai">@Sab-mantharai</a><span class="ac-note">tile is on the page and unclaimed</span></li><li><a href="https://github.com/karunya-D">@karunya-D</a><span class="ac-note">tile is on the page and unclaimed</span></li><li><a href="https://github.com/monishathangam12">@monishathangam12</a><span class="ac-note">tile is on the page and unclaimed</span></li><li><a href="https://github.com/ramprakashkrishnan">@ramprakashkrishnan</a><span class="ac-note">tile is on the page and unclaimed</span></li><li><a href="https://github.com/rmaheshkumar73-code">@rmaheshkumar73-code</a><span class="ac-note">tile is on the page and unclaimed</span></li><li><a href="https://github.com/sahilmodi1965">@sahilmodi1965</a><span class="ac-note">tile is on the page and unclaimed</span></li><li><a href="https://github.com/saktheeswaranCM">@saktheeswaranCM</a><span class="ac-note">tile is on the page and unclaimed</span></li><li><a href="https://github.com/saravana-ppe">@saravana-ppe</a><span class="ac-note">tile is on the page and unclaimed</span></li><li><a href="https://github.com/sathya-vv">@sathya-vv</a><span class="ac-note">tile is on the page and unclaimed</span></li><li><a href="https://github.com/sharon799">@sharon799</a><span class="ac-note">tile is on the page and unclaimed</span></li><li><a href="https://github.com/ungalravi">@ungalravi</a><span class="ac-note">tile is on the page and unclaimed</span></li></ul>
+  </div>
+</div>
+
+<div class="ac-block">
+  <h3>What we could make easier</h3>
+  <p class="ac-sub">None of this is about how anyone worked &mdash; it is about how the project is arranged, and every one of them has an easier arrangement. The bar shows the cost in one picture.</p>
+  <div class="ac-stack" role="img" aria-label="Of 6 saved changes, 6 built something and 0 only untangled edits"><span style="width:100.0%;background:#2a78d6"></span><span style="width:0.0%;background:#eb6834"></span></div>
+  <p class="ac-legend">
+    <span><i style="background:#2a78d6"></i>6 saves that built something</span>
+    <span><i style="background:#eb6834"></i>0 saves that only untangled edits (0%)</span>
+  </p>
+  <ol class="ac-friction"><li><h4>One file, everyone in it</h4><p class="ac-eff">All 13 tiles share a single file, which is why 0 of 6 saves (0%) exist only to untangle two people&rsquo;s edits.</p><p class="ac-fix"><b>Easier would be:</b> One file per tile, stitched together automatically.</p></li><li><h4>Publishing fails when two people save at once</h4><p class="ac-eff">Each of those untangling saves began as a refusal on someone&rsquo;s screen, with no obvious next step.</p><p class="ac-fix"><b>Easier would be:</b> A single <code>publish</code> command that fetches, replays and sends.</p></li><li><h4>Nothing protects one tile from another</h4><p class="ac-eff">The rule is &ldquo;edit only your own block&rdquo;, but nothing enforces it &mdash; 0 people have saves that reach into someone else&rsquo;s tile or the shared theme. Useful to know now rather than at 100 tiles.</p><p class="ac-fix"><b>Easier would be:</b> Ownership per tile, so a wrong edit is caught before it publishes, not after.</p></li><li><h4>Finished drafts have no road to the page</h4><p class="ac-eff">0 of 0 draft copies are already published but never cleared, so only 0 still hold live work &mdash; easy to lose your own in the noise.</p><p class="ac-fix"><b>Easier would be:</b> Clear each draft automatically once published.</p></li><li><h4>Name settings unset, so credit splits</h4><p class="ac-eff">0 people appear under two names, and some saves carry a laptop default like <code>yourname@macbook.local</code> that links to no account.</p><p class="ac-fix"><b>Easier would be:</b> Set name and email once during setup.</p></li><li><h4>No preview before it is public</h4><p class="ac-eff">There is no way to see your tile between saving and going live, so the safe move is to try less.</p><p class="ac-fix"><b>Easier would be:</b> A one-command local preview.</p></li></ol>
+</div>
+
+<div class="ac-block">
+  <h3>The short version</h3>
+  <ul class="ac-reads">
+    <li><b>Starting was never the hard part.</b> 1 of 13 people opened the project and 1 wrote something of their own &mdash; 1 got it published. The last step is where people stall, and that is a setup problem, not a skill problem.</li>
+    <li><b>Somebody tested the edges &mdash; and that is a skill.</b> 0 people made saves landing inside a tile other than their own, and 0 changed the shared theme every tile sits on. Vernon did both: restyled another person&rsquo;s card, then switched the page background. Nothing stopped either change, because nothing is set up to stop anyone. Probing what a shared system actually permits &mdash; rather than what its instructions claim &mdash; is what testing looks like, and it surfaced a genuine gap, now listed above.</li>
+    <li><b>One save in three is spent untangling.</b> 0 of 6 saves exist only because 1 people share one file. It is the number that would fall furthest with a single change.</li>
+    <li><b>0 finished saves are waiting in draft copies.</b> Not abandoned &mdash; finished. Publishing them is the cheapest way to make this page more complete today.</li>
+    <li><b>Helping someone else publish works.</b> 0 people&rsquo;s tiles are live because someone finished the last step for them rather than waiting.</li>
+    <li><b>12 tiles are still open.</b> The easiest wins left on the board.</li>
+  </ul>
+</div>
+
+<div class="ac-block">
+  <h3>The words, in plain English</h3>
+  <p class="ac-sub">The tools have their own vocabulary. Here it is translated, with the technical word beside it.</p>
+  <dl class="ac-glossary"><div class="ac-term"><dt>Save<span class="ac-jargon">commit</span></dt><dd>One batch of finished edits, stored with your name on it.</dd></div><div class="ac-term"><dt>Publish<span class="ac-jargon">push</span></dt><dd>Sending your saves to the shared page, where everyone can see them.</dd></div><div class="ac-term"><dt>The shared page<span class="ac-jargon">main</span></dt><dd>The one official copy that the live website is built from.</dd></div><div class="ac-term"><dt>Draft copy<span class="ac-jargon">branch</span></dt><dd>Your own private version. Safe to experiment in; invisible to others until you publish.</dd></div><div class="ac-term"><dt>Untangling<span class="ac-jargon">merge</span></dt><dd>The extra work of combining your edits with someone else&rsquo;s when you both changed the same file.</dd></div><div class="ac-term"><dt>Request for review<span class="ac-jargon">pull request</span></dt><dd>Asking someone to check and approve your work before it goes live.</dd></div></dl>
+</div>
+
+<p class="ac-foot">The steps are strictly nested: each row counts a subset of the row above it. &ldquo;Their tile is live&rdquo; counts only people who published their own tile; 0 further tiles are live because someone else finished the last step for them, which is why the wall reads 0.</p>
+
+</main>
+<footer>Regenerate with <code>python3 tools/build_activity.py</code> &middot; <a href="index.html" style="color:inherit">back to the wall</a></footer>
+<script>
+(function(){
+  var svg=document.querySelector('.ac .ac-wrap .ac-svg');
+  if(!svg) return;
+  var tip=document.getElementById('ac-tip'), cross=svg.querySelector('.ac-cross'),
+      hit=svg.querySelector('.ac-hit'), wrap=svg.closest('.ac-wrap');
+  var data=[["8 Sep 11:00", 3], ["8 Sep 11:30", 3]], PADL=34, TW=840, n=data.length;
+  function show(e){
+    var r=svg.getBoundingClientRect(), sx=(e.clientX-r.left)/r.width*TW;
+    var i=Math.round((sx-PADL)/(TW-PADL)*(n-1)); i=Math.max(0,Math.min(n-1,i));
+    var x=PADL+(TW-PADL)*i/(n-1);
+    cross.setAttribute('x1',x); cross.setAttribute('x2',x); cross.setAttribute('opacity','.35');
+    tip.textContent=data[i][0]+' \u00b7 '+data[i][1]+(data[i][1]===1?' save':' saves');
+    tip.style.opacity='1';
+    var wr=wrap.getBoundingClientRect(), px=r.left-wr.left+x/TW*r.width;
+    tip.style.left=Math.min(Math.max(px-tip.offsetWidth/2,0),wr.width-tip.offsetWidth)+'px';
+    tip.style.top=(r.top-wr.top-4)+'px';
+  }
+  function hide(){ tip.style.opacity='0'; cross.setAttribute('opacity','0'); }
+  hit.addEventListener('mousemove',show); hit.addEventListener('mouseleave',hide);
+  hit.addEventListener('touchmove',function(e){ if(e.touches[0]) show(e.touches[0]); },{passive:true});
+})();
+</script>
+</body>
+</html>
