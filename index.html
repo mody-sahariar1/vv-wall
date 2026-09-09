@@ -33,7 +33,7 @@
 <!-- ===== START mody-sahariar1 ===== -->
 <section class="card" id="mody-sahariar1" style="grid-column:1/-1;padding:0;overflow:hidden;border-color:#1b2430;background:#0b0f16;color:#e8ecf2">
 <style>
-  #mody-sahariar1 .scene{position:relative;height:260px;overflow:hidden;background:#0b0f16}
+  #mody-sahariar1 .scene{position:relative;height:340px;overflow:hidden;background:#0b0f16}
   #mody-sahariar1 .sky{position:absolute;inset:0;opacity:0;animation:24s linear infinite}
   #mody-sahariar1 .sky.summer{background:linear-gradient(#5fb2ff 0%,#bfe3ff 70%,#e9f6ff 100%);animation-name:m1-s-summer}
   #mody-sahariar1 .sky.rain{background:linear-gradient(#3a4450 0%,#5b6570 60%,#7a838c 100%);animation-name:m1-s-rain}
@@ -41,42 +41,50 @@
   #mody-sahariar1 .sky.night{background:radial-gradient(ellipse at 50% 120%,#1c2a3f 0%,#0b0f16 60%);animation-name:m1-s-night}
   #mody-sahariar1 .stars{position:absolute;inset:0;opacity:0;animation:m1-s-night 24s linear infinite;
     background-image:radial-gradient(1.5px 1.5px at 12% 22%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 28% 12%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 41% 30%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 57% 18%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 66% 34%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 78% 10%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 88% 26%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 22% 40%,#fff 50%,transparent 51%)}
-  #mody-sahariar1 .sun{position:absolute;top:22px;right:46px;width:54px;height:54px;border-radius:50%;animation:m1-sun 24s linear infinite}
-  #mody-sahariar1 .moon{position:absolute;top:22px;right:46px;width:54px;height:54px;border-radius:50%;background:transparent;box-shadow:inset -13px 7px 0 0 #f3e9c7;opacity:0;animation:m1-s-night 24s linear infinite;filter:drop-shadow(0 0 14px rgba(243,233,199,.35))}
+  #mody-sahariar1 .sun{position:absolute;top:26px;right:54px;width:64px;height:64px;border-radius:50%;animation:m1-sun 24s linear infinite}
+  #mody-sahariar1 .moon{position:absolute;top:26px;right:54px;width:64px;height:64px;border-radius:50%;background:transparent;box-shadow:inset -13px 7px 0 0 #f3e9c7;opacity:0;animation:m1-s-night 24s linear infinite;filter:drop-shadow(0 0 14px rgba(243,233,199,.35))}
   #mody-sahariar1 .cloud{position:absolute;width:150px;height:44px;border-radius:40px;background:rgba(30,36,44,.75);opacity:0;animation:m1-cloud 24s linear infinite}
   #mody-sahariar1 .cloud:before{content:"";position:absolute;left:34px;top:-24px;width:70px;height:60px;border-radius:50%;background:inherit}
   #mody-sahariar1 .c1{top:26px;left:12%}#mody-sahariar1 .c2{top:48px;left:55%;width:190px}#mody-sahariar1 .c3{top:14px;right:8%;width:120px}
-  #mody-sahariar1 .rain{position:absolute;inset:0;opacity:0;background:repeating-linear-gradient(104deg,transparent 0 16px,rgba(210,228,255,.42) 16px 17px);background-size:100% 100%;animation:m1-rainop 24s linear infinite,m1-rainfall .45s linear infinite}
+  #mody-sahariar1 .rain{position:absolute;inset:0;opacity:0;animation:m1-rainop 24s linear infinite;overflow:hidden}
+  #mody-sahariar1 .drop{position:absolute;top:-24px;width:2px;height:16px;border-radius:2px;transform:rotate(12deg);background:linear-gradient(to bottom,rgba(215,232,255,0) 0%,rgba(215,232,255,.9) 70%,#eaf4ff 100%);animation:m1-drop .8s linear infinite}
+  #mody-sahariar1 .drop.far{height:10px;width:1.5px;opacity:.5;animation-duration:1.1s}
+  #mody-sahariar1 .splash{position:absolute;bottom:40px;width:6px;height:3px;border-radius:50%;border:1px solid rgba(215,232,255,.8);border-top-color:transparent;opacity:0;animation:m1-splash .8s linear infinite}
   #mody-sahariar1 .snow{position:absolute;inset:0;opacity:0;animation:m1-s-snow 24s linear infinite}
   #mody-sahariar1 .flake{position:absolute;top:-8px;width:6px;height:6px;border-radius:50%;background:#fff;opacity:.9;animation:m1-flake 4.2s linear infinite}
-  #mody-sahariar1 .ground{position:absolute;left:0;right:0;bottom:0;height:36px;background:#2f6b3a;animation:m1-ground 24s linear infinite}
-  #mody-sahariar1 .ninja{position:absolute;bottom:36px;width:84px;height:120px;animation:6s cubic-bezier(.65,0,.35,1) infinite}
-  #mody-sahariar1 .n1{left:6%;animation-name:m1-run-l}
-  #mody-sahariar1 .n2{right:6%;animation-name:m1-run-r;transform:scaleX(-1)}
-  #mody-sahariar1 .orb{position:absolute;top:44px;right:-22px;width:32px;height:32px;border-radius:50%;background:radial-gradient(circle,#dff6ff 0%,#4fc3ff 35%,rgba(79,195,255,0) 72%);box-shadow:0 0 18px 6px rgba(79,195,255,.55);animation:m1-spin .5s linear infinite,m1-power 6s linear infinite}
-  #mody-sahariar1 .bolt{position:absolute;top:34px;right:-30px;width:52px;height:52px;animation:m1-power 6s linear infinite}
+  #mody-sahariar1 .ground{position:absolute;left:0;right:0;bottom:0;height:44px;background:#2f6b3a;animation:m1-ground 24s linear infinite}
+  #mody-sahariar1 .ninja{position:absolute;bottom:44px;width:84px;height:120px;animation-duration:6s,6s;animation-iteration-count:infinite}
+  #mody-sahariar1 .n1{left:6%;animation-name:m1-run-l,m1-jump;animation-timing-function:cubic-bezier(.65,0,.35,1),cubic-bezier(.3,.9,.6,1)}
+  #mody-sahariar1 .n2{right:6%;transform:scaleX(-1);animation-name:m1-run-r,m1-jump;animation-timing-function:cubic-bezier(.65,0,.35,1),cubic-bezier(.3,.9,.6,1)}
+  #mody-sahariar1 .orb{position:absolute;top:42px;right:-14px;width:32px;height:32px;border-radius:50%;background:radial-gradient(circle,#dff6ff 0%,#4fc3ff 35%,rgba(79,195,255,0) 72%);box-shadow:0 0 18px 6px rgba(79,195,255,.55);animation:m1-spin .5s linear infinite,m1-power 6s linear infinite}
+  #mody-sahariar1 .bolt{position:absolute;top:32px;right:-22px;width:52px;height:52px;animation:m1-power 6s linear infinite}
   #mody-sahariar1 .bolt path{stroke:#b9f3ff;stroke-width:3;fill:none;filter:drop-shadow(0 0 6px #7be7ff);animation:m1-flicker .12s steps(2) infinite}
-  #mody-sahariar1 .strike{position:absolute;left:50%;top:0;width:60px;height:230px;margin-left:-30px;opacity:0;animation:m1-strike 6s linear infinite}
-  #mody-sahariar1 .strike path{stroke:#eaf9ff;stroke-width:4;fill:none;stroke-linejoin:round;stroke-dasharray:420;stroke-dashoffset:420;filter:drop-shadow(0 0 8px #9ff0ff) drop-shadow(0 0 18px #4fc3ff);animation:m1-draw 6s linear infinite}
+  #mody-sahariar1 .strike{position:absolute;left:50%;top:-8px;width:60px;height:92px;margin-left:-30px;opacity:0;animation:m1-strike 6s linear infinite}
+  #mody-sahariar1 .strike path{stroke:#eaf9ff;stroke-width:4;fill:none;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200;filter:drop-shadow(0 0 8px #9ff0ff) drop-shadow(0 0 18px #4fc3ff);animation:m1-draw 6s linear infinite}
   #mody-sahariar1 .strike .thin{stroke-width:1.5;stroke:#fff}
-  #mody-sahariar1 .impact{position:absolute;left:50%;bottom:26px;width:20px;height:8px;margin-left:-10px;border-radius:50%;border:3px solid #d9f5ff;opacity:0;animation:m1-impact 6s ease-out infinite}
+  #mody-sahariar1 .impact{position:absolute;left:50%;top:76px;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;border:3px solid #d9f5ff;opacity:0;animation:m1-impact 6s ease-out infinite}
   #mody-sahariar1 .white{position:absolute;inset:0;background:#fff;opacity:0;animation:m1-white 6s linear infinite;pointer-events:none}
-  #mody-sahariar1 .ember{position:absolute;bottom:40px;width:4px;height:4px;border-radius:50%;background:#ffd27a;opacity:0;animation:m1-ember 6s linear infinite}
-  #mody-sahariar1 .cap{padding:14px 20px 18px}
-  #mody-sahariar1 .cap h2{margin:0 0 4px;font-size:1.05rem}
+  #mody-sahariar1 .ember{position:absolute;top:82px;width:4px;height:4px;border-radius:50%;background:#ffd27a;opacity:0;animation:m1-ember 6s linear infinite}
+  #mody-sahariar1 .cap{display:flex;align-items:center;flex-wrap:wrap;gap:6px 16px;padding:10px 18px}
+  #mody-sahariar1 .cap h2{margin:0;font-size:.95rem}
   #mody-sahariar1 .cap h2 a{color:#e8ecf2;border-bottom-color:#5b6b7b}
-  #mody-sahariar1 .cap .who{color:#9aa4b5;margin:0 0 8px}
-  #mody-sahariar1 .cap .title{color:#e6b455;font-weight:700;font-size:1rem;margin:0 0 8px;letter-spacing:.02em}
-  #mody-sahariar1 .cap .site{display:inline-block;color:#0b0f16;background:#e6b455;border:none;border-radius:6px;padding:5px 12px;font-size:.8rem;text-decoration:none}
+  #mody-sahariar1 .cap .who{color:#9aa4b5;margin:0;font-size:.82rem}
+  #mody-sahariar1 .cap .title{color:#e6b455;font-weight:700;font-size:.95rem;margin:0;letter-spacing:.02em}
+  #mody-sahariar1 .cap .site{display:inline-block;margin-left:auto;color:#0b0f16;background:#e6b455;border:none;border-radius:6px;padding:4px 11px;font-size:.78rem;text-decoration:none}
   #mody-sahariar1 .cap .site:hover{background:#f0c66a}
-  @keyframes m1-run-l{0%,8%{left:6%}25%,32%{left:calc(50% - 88px)}36%{left:calc(50% - 130px)}46%,100%{left:6%}}
-  @keyframes m1-run-r{0%,8%{right:6%}25%,32%{right:calc(50% - 88px)}36%{right:calc(50% - 130px)}46%,100%{right:6%}}
+  @keyframes m1-run-l{0%,8%{left:6%}18%{left:calc(50% - 210px)}25%,30%{left:calc(50% - 90px)}38%{left:calc(50% - 150px)}46%,100%{left:6%}}
+  @keyframes m1-run-r{0%,8%{right:6%}18%{right:calc(50% - 210px)}25%,30%{right:calc(50% - 90px)}38%{right:calc(50% - 150px)}46%,100%{right:6%}}
+  @keyframes m1-jump{0%,18%{bottom:44px}22%{bottom:160px}25%,30%{bottom:200px}34%{bottom:150px}38%{bottom:44px}40%{bottom:54px}42%,100%{bottom:44px}}
+  @keyframes m1-leg1{0%,8%{transform:rotate(0deg)}8.00%{transform:rotate(38deg)}9.25%{transform:rotate(-38deg)}10.50%{transform:rotate(38deg)}11.75%{transform:rotate(-38deg)}13.00%{transform:rotate(38deg)}14.25%{transform:rotate(-38deg)}15.50%{transform:rotate(38deg)}16.75%{transform:rotate(-38deg)}20%,32%{transform:rotate(-50deg)}36%{transform:rotate(-20deg)}40%{transform:rotate(12deg)}44%,100%{transform:rotate(0deg)}}
+  @keyframes m1-leg2{0%,8%{transform:rotate(0deg)}8.00%{transform:rotate(-38deg)}9.25%{transform:rotate(38deg)}10.50%{transform:rotate(-38deg)}11.75%{transform:rotate(38deg)}13.00%{transform:rotate(-38deg)}14.25%{transform:rotate(38deg)}15.50%{transform:rotate(-38deg)}16.75%{transform:rotate(38deg)}20%,32%{transform:rotate(35deg)}36%{transform:rotate(20deg)}40%{transform:rotate(-12deg)}44%,100%{transform:rotate(0deg)}}
+  @keyframes m1-armb{0%,8%{transform:rotate(0deg)}8.00%{transform:rotate(-40deg)}9.25%{transform:rotate(40deg)}10.50%{transform:rotate(-40deg)}11.75%{transform:rotate(40deg)}13.00%{transform:rotate(-40deg)}14.25%{transform:rotate(40deg)}15.50%{transform:rotate(-40deg)}16.75%{transform:rotate(40deg)}20%,32%{transform:rotate(-120deg)}36%{transform:rotate(-30deg)}44%,100%{transform:rotate(0deg)}}
+  @keyframes m1-bob{0%,8%{transform:translateY(0) rotate(0deg)}8.00%{transform:translateY(-4px) rotate(0deg)}9.25%{transform:translateY(0px) rotate(0deg)}10.50%{transform:translateY(-4px) rotate(0deg)}11.75%{transform:translateY(0px) rotate(0deg)}13.00%{transform:translateY(-4px) rotate(0deg)}14.25%{transform:translateY(0px) rotate(0deg)}15.50%{transform:translateY(-4px) rotate(0deg)}16.75%{transform:translateY(0px) rotate(0deg)}20%,32%{transform:translateY(0) rotate(18deg)}36%{transform:translateY(0) rotate(-6deg)}42%,100%{transform:translateY(0) rotate(0deg)}}
   @keyframes m1-power{0%,24%{opacity:1}25%,52%{opacity:0}62%,100%{opacity:1}}
   @keyframes m1-strike{0%,24.5%{opacity:0}25%,32%{opacity:1}35%,100%{opacity:0}}
-  @keyframes m1-draw{0%,25%{stroke-dashoffset:420}28%,100%{stroke-dashoffset:0}}
-  @keyframes m1-impact{0%,27%{opacity:0;transform:scale(1)}28%{opacity:1}36%{opacity:0;transform:scale(14,6)}100%{opacity:0}}
+  @keyframes m1-draw{0%,25%{stroke-dashoffset:200}27.5%,100%{stroke-dashoffset:0}}
+  @keyframes m1-impact{0%,27%{opacity:0;transform:scale(1)}28%{opacity:1}36%{opacity:0;transform:scale(11)}100%{opacity:0}}
   @keyframes m1-white{0%,27%{opacity:0}28%{opacity:.85}31%{opacity:0}100%{opacity:0}}
-  @keyframes m1-ember{0%,28%{opacity:0;transform:translate(0,0)}30%{opacity:1}44%{opacity:0;transform:translate(var(--dx),-110px)}100%{opacity:0}}
+  @keyframes m1-ember{0%,28%{opacity:0;transform:translate(0,0)}30%{opacity:1}44%{opacity:0;transform:translate(var(--dx),110px)}100%{opacity:0}}
   @keyframes m1-spin{to{transform:rotate(360deg)}}
   @keyframes m1-flicker{50%{opacity:.35}}
   @keyframes m1-s-summer{0%,21%{opacity:1}27%,94%{opacity:0}100%{opacity:1}}
@@ -85,28 +93,32 @@
   @keyframes m1-s-night{0%,71%{opacity:0}77%,94%{opacity:1}100%{opacity:0}}
   @keyframes m1-cloud{0%,21%{opacity:0;transform:translateX(0)}27%,46%{opacity:1}52%,71%{opacity:.35}77%,100%{opacity:0;transform:translateX(60px)}}
   @keyframes m1-rainop{0%,21%{opacity:0}27%,46%{opacity:1}52%,100%{opacity:0}}
-  @keyframes m1-rainfall{to{background-position:-40px 260px}}
-  @keyframes m1-flake{0%{transform:translate(0,0)}50%{transform:translate(14px,130px)}100%{transform:translate(-6px,270px)}}
+  @keyframes m1-drop{0%{transform:translate(0,0) rotate(12deg)}100%{transform:translate(-70px,380px) rotate(12deg)}}
+  @keyframes m1-splash{0%,70%{opacity:0;transform:scale(.4)}78%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(2.2)}}
+  @keyframes m1-flake{0%{transform:translate(0,0)}50%{transform:translate(14px,170px)}100%{transform:translate(-6px,350px)}}
   @keyframes m1-sun{0%,21%{opacity:1;background:#ffd23f;box-shadow:0 0 40px 12px rgba(255,210,63,.45)}27%,46%{opacity:.35;background:#c9ced6;box-shadow:0 0 20px 6px rgba(200,206,214,.2)}52%,71%{opacity:1;background:#f7f2e4;box-shadow:0 0 30px 8px rgba(247,242,228,.4)}77%,94%{opacity:0;background:#f7f2e4;box-shadow:none}100%{opacity:1;background:#ffd23f;box-shadow:0 0 40px 12px rgba(255,210,63,.45)}}
   @keyframes m1-ground{0%,21%{background:#2f6b3a}27%,46%{background:#3b3f46}52%,71%{background:#e9eef5}77%,94%{background:#182233}100%{background:#2f6b3a}}
-  @media (max-width:700px){#mody-sahariar1 .scene{height:220px}#mody-sahariar1 .ninja{zoom:.8}}
+  #mody-sahariar1 .fig{transform-box:fill-box;transform-origin:50% 100%;animation:m1-bob 6s linear infinite}
+  #mody-sahariar1 .leg,#mody-sahariar1 .armb{transform-box:fill-box;transform-origin:50% 0;animation:6s linear infinite}
+  #mody-sahariar1 .l1{animation-name:m1-leg1}#mody-sahariar1 .l2{animation-name:m1-leg2}#mody-sahariar1 .armb{animation-name:m1-armb}
+  @media (max-width:700px){#mody-sahariar1 .scene{height:260px}#mody-sahariar1 .ninja{zoom:.8}#mody-sahariar1 .cap .site{margin-left:0}}
 </style>
 <div class="scene" aria-label="Two ninja run at each other, powers vanish on impact and lightning strikes from the sky, while the seasons cycle behind them">
   <div class="sky night"></div><div class="sky summer"></div><div class="sky rain"></div><div class="sky snow"></div>
   <div class="stars"></div>
   <div class="sun"></div><div class="moon"></div>
   <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
-  <div class="rain"></div>
+  <div class="rain"><i class="drop far" style="left:42%;animation-delay:-0.76s"></i><i class="drop" style="left:51%;animation-delay:-0.52s"></i><i class="drop" style="left:10%;animation-delay:-0.66s"></i><i class="drop far" style="left:13%;animation-delay:-0.29s"></i><i class="drop" style="left:8%;animation-delay:-0.73s"></i><i class="drop" style="left:28%;animation-delay:-0.03s"></i><i class="drop far" style="left:56%;animation-delay:-0.33s"></i><i class="drop" style="left:31%;animation-delay:-0.07s"></i><i class="drop" style="left:55%;animation-delay:-0.05s"></i><i class="drop far" style="left:73%;animation-delay:-0.1s"></i><i class="drop" style="left:29%;animation-delay:-0.5s"></i><i class="drop" style="left:75%;animation-delay:-0.76s"></i><i class="drop far" style="left:74%;animation-delay:-0.47s"></i><i class="drop" style="left:7%;animation-delay:-0.78s"></i><i class="drop" style="left:6%;animation-delay:-0.45s"></i><i class="drop far" style="left:18%;animation-delay:-0.23s"></i><i class="drop" style="left:19%;animation-delay:-0.43s"></i><i class="drop" style="left:74%;animation-delay:-0.25s"></i><i class="drop far" style="left:88%;animation-delay:-0.14s"></i><i class="drop" style="left:75%;animation-delay:-0.46s"></i><i class="drop" style="left:25%;animation-delay:-0.3s"></i><i class="drop far" style="left:71%;animation-delay:-0.57s"></i><i class="drop" style="left:73%;animation-delay:-0.05s"></i><i class="drop" style="left:27%;animation-delay:-0.4s"></i><i class="drop far" style="left:69%;animation-delay:-0.34s"></i><i class="drop" style="left:41%;animation-delay:-0.37s"></i><i class="drop" style="left:59%;animation-delay:-0.29s"></i><i class="drop far" style="left:32%;animation-delay:-0.64s"></i><i class="drop" style="left:90%;animation-delay:-0.62s"></i><i class="drop" style="left:11%;animation-delay:-0.46s"></i><i class="splash" style="left:71%;animation-delay:-0.4s"></i><i class="splash" style="left:47%;animation-delay:-0.58s"></i><i class="splash" style="left:40%;animation-delay:-0.49s"></i><i class="splash" style="left:13%;animation-delay:-0.09s"></i><i class="splash" style="left:57%;animation-delay:-0.13s"></i><i class="splash" style="left:47%;animation-delay:-0.12s"></i><i class="splash" style="left:66%;animation-delay:-0.34s"></i><i class="splash" style="left:89%;animation-delay:-0.06s"></i></div>
   <div class="snow"><i class="flake" style="left:5%"></i><i class="flake" style="left:14%;animation-delay:-1.1s"></i><i class="flake" style="left:23%;animation-delay:-2.6s;width:4px;height:4px"></i><i class="flake" style="left:33%;animation-delay:-.6s"></i><i class="flake" style="left:42%;animation-delay:-3.3s;width:5px;height:5px"></i><i class="flake" style="left:51%;animation-delay:-1.9s"></i><i class="flake" style="left:60%;animation-delay:-.2s;width:4px;height:4px"></i><i class="flake" style="left:69%;animation-delay:-2.2s"></i><i class="flake" style="left:78%;animation-delay:-3.8s;width:5px;height:5px"></i><i class="flake" style="left:87%;animation-delay:-1.5s"></i><i class="flake" style="left:95%;animation-delay:-2.9s;width:4px;height:4px"></i><i class="flake" style="left:47%;animation-delay:-3.6s"></i></div>
   <div class="ninja n1">
-    <svg viewBox="0 0 84 120" width="84" height="120"><g fill="#ff7a1a"><path d="M35 8l-9-6 6 10-12-2 9 6-11 4 12 0-6 8 11-5z"/><circle cx="35" cy="26" r="12"/><path d="M24 40h22l4 20 28 4-1 9-31-3v48h-9V78h-2v40h-9V76l-4 16-8-2 6-34z"/></g><path d="M23 30h24" stroke="#0b0f16" stroke-width="4"/></svg>
+    <svg class="fig" viewBox="0 0 84 120" width="84" height="120"><g fill="#ff7a1a"><path d="M35 8l-9-6 6 10-12-2 9 6-11 4 12 0-6 8 11-5z"/><circle cx="35" cy="26" r="12"/><path class="torso" d="M24 40h22l4 22-3 16H23l-3-16z"/><path class="armf" d="M44 46l30 12-2 8-31-8z"/><path class="armb" d="M26 44h8v26h-8z"/><path class="leg l1" d="M25 76h10v42h-10z"/><path class="leg l2" d="M36 76h10v42h-10z"/></g><path d="M23 30h24" stroke="#0b0f16" stroke-width="4"/></svg>
     <div class="orb"></div>
   </div>
   <div class="ninja n2">
-    <svg viewBox="0 0 84 120" width="84" height="120"><g fill="#3a4a7a"><path d="M20 22c4-14 26-16 32-6-6-4-12-2-14 4 8 2 14 8 12 16-4-8-12-6-20-2z"/><circle cx="35" cy="26" r="12"/><path d="M24 40h22l4 20 28 4-1 9-31-3v48h-9V78h-2v40h-9V76l-4 16-8-2 6-34z"/></g></svg>
+    <svg class="fig" viewBox="0 0 84 120" width="84" height="120"><g fill="#3a4a7a"><path d="M20 22c4-14 26-16 32-6-6-4-12-2-14 4 8 2 14 8 12 16-4-8-12-6-20-2z"/><circle cx="35" cy="26" r="12"/><path class="torso" d="M24 40h22l4 22-3 16H23l-3-16z"/><path class="armf" d="M44 46l30 12-2 8-31-8z"/><path class="armb" d="M26 44h8v26h-8z"/><path class="leg l1" d="M25 76h10v42h-10z"/><path class="leg l2" d="M36 76h10v42h-10z"/></g></svg>
     <svg class="bolt" viewBox="0 0 52 52"><path d="M4 26l8-6 4 10 6-14 6 12 8-16 4 10 8-8"/><path d="M6 32l10 2 4 8 8-12 6 6 8-10"/></svg>
   </div>
-  <svg class="strike" viewBox="0 0 60 230"><path d="M34 0l-10 46 14 4-16 52 18 6-14 60 20 8-12 54"/><path class="thin" d="M34 0l-10 46 14 4-16 52 18 6-14 60 20 8-12 54"/></svg>
+  <svg class="strike" viewBox="0 0 60 96"><path d="M34 0l-8 26 12 4-14 30 16 4-10 32"/><path class="thin" d="M34 0l-8 26 12 4-14 30 16 4-10 32"/></svg>
   <div class="impact"></div>
   <i class="ember" style="left:46%;--dx:-46px"></i><i class="ember" style="left:50%;--dx:8px;animation-delay:.08s"></i><i class="ember" style="left:54%;--dx:50px;animation-delay:.04s"></i><i class="ember" style="left:48%;--dx:-18px;animation-delay:.12s"></i><i class="ember" style="left:52%;--dx:34px;animation-delay:.16s"></i>
   <div class="ground"></div>
