@@ -292,9 +292,12 @@
     #Poomuthu-G h2 a { color:#164E4B; border-bottom-color:#2F7E7C; }
     #Poomuthu-G .who { color:#356B68; }
     #Poomuthu-G .quote { color:#3F7A77; font-style:italic; font-size:.8rem; margin:10px 0 0; }
-    #Poomuthu-G .cb-link { display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:6px 12px; border-radius:999px; background:#2F7E7C; color:#F0FAF8; font-size:.78rem; font-weight:600; letter-spacing:.01em; text-decoration:none; transition:background .2s ease, transform .2s ease; }
+    #Poomuthu-G .cb-row { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:14px; }
+    #Poomuthu-G .cb-star { margin:0; flex:0 0 auto; text-align:center; }
+    #Poomuthu-G .cb-star svg { width:52px; height:66px; display:block; }
+    #Poomuthu-G .cb-star figcaption { font-size:.56rem; font-weight:700; letter-spacing:.02em; color:#356B68; margin-top:1px; }
+    #Poomuthu-G .cb-link { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; background:#2F7E7C; color:#F0FAF8; font-size:.72rem; font-weight:600; letter-spacing:.01em; text-align:center; text-decoration:none; transition:background .2s ease, transform .2s ease; }
     #Poomuthu-G .cb-link:hover { background:#164E4B; transform:translateY(-1px); }
-    #Poomuthu-G .cb-link::before { content:"\01F3CF"; font-size:.9rem; }
     #Poomuthu-G:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(47,126,124,0.30); }
     #Poomuthu-G .ck { width:100%; display:block; border-radius:8px; margin-bottom:12px; }
     #Poomuthu-G .ck-spin { transform-box:view-box; transform-origin:152px 44px; animation:ck-pg-spin 2.4s linear infinite; }
@@ -456,8 +459,54 @@
   </svg>
   <h2><a href="https://github.com/Poomuthu-G">@Poomuthu-G</a></h2>
   <p class="who">Poomuthu &middot; DEEP Cuddalore</p>
-  <p class="quote">&ldquo;I love Cuddalore&rdquo;</p>
-  <p><a class="cb-link" href="https://www.cricbuzz.com/" target="_blank" rel="noopener noreferrer">Live scores on Cricbuzz</a></p>
+  <p class="quote">&ldquo;Cuddalore Premier League&rdquo;</p>
+  <div class="cb-row">
+    <figure class="cb-star">
+      <svg viewBox="0 0 60 76" role="img" aria-label="Batsman in India blues, jersey 18">
+        <ellipse cx="30" cy="71" rx="15" ry="3" fill="#2F7E7C" opacity=".18"/>
+        <path d="M23 46 L20 66 L27 66 L29 47 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+        <path d="M34 46 L38 66 L45 66 L40 46 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+        <rect x="18" y="65" width="11" height="4" rx="2" fill="#1B3A4A"/>
+        <rect x="36" y="65" width="11" height="4" rx="2" fill="#1B3A4A"/>
+        <path d="M21 27 L39 27 L42 48 L19 48 Z" fill="#1E5FA8"/>
+        <path d="M21 27 L39 27 L40 33 L20 33 Z" fill="#2C79C9"/>
+        <text x="30" y="45" font-size="9" font-weight="700" fill="#FFD95C" text-anchor="middle" font-family="system-ui, sans-serif">18</text>
+        <path d="M38 29 L49 35 L46 40 L36 34 Z" fill="#1E5FA8"/>
+        <circle cx="49" cy="38" r="3.4" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+        <line x1="49" y1="38" x2="53" y2="30" stroke="#7A4A22" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M50.6 28.4 L56 31.6 L53 12 L48.4 13.4 Z" fill="#D9A85F" stroke="#9C6B2F" stroke-width="1" stroke-linejoin="round"/>
+        <circle cx="30" cy="18" r="8" fill="#E0A87C"/>
+        <path d="M22.4 15.6 A8 8 0 0 1 37.8 14.6 L37.8 11.4 A8 8 0 0 0 22.4 12.4 Z" fill="#2B1B12"/>
+        <path d="M23.6 20 Q30 27.6 36.4 20 Q30 23.6 23.6 20 Z" fill="#2B1B12"/>
+      </svg>
+      <figcaption>Virat Kohli</figcaption>
+    </figure>
+    <a class="cb-link" href="https://www.cricbuzz.com/" target="_blank" rel="noopener noreferrer">Live scores on Cricbuzz</a>
+    <figure class="cb-star">
+      <svg viewBox="0 0 60 76" role="img" aria-label="Wicketkeeper in India blues, jersey 7">
+        <ellipse cx="30" cy="71" rx="15" ry="3" fill="#2F7E7C" opacity=".18"/>
+        <path d="M22 46 L19 66 L26 66 L28 47 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+        <path d="M33 46 L37 66 L44 66 L39 46 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+        <rect x="17" y="65" width="11" height="4" rx="2" fill="#1B3A4A"/>
+        <rect x="35" y="65" width="11" height="4" rx="2" fill="#1B3A4A"/>
+        <path d="M20 27 L38 27 L41 48 L18 48 Z" fill="#1E5FA8"/>
+        <path d="M20 27 L38 27 L39 33 L19 33 Z" fill="#2C79C9"/>
+        <text x="29" y="45" font-size="9" font-weight="700" fill="#FFD95C" text-anchor="middle" font-family="system-ui, sans-serif">7</text>
+        <path d="M21 30 L12 38 L16 42 L24 35 Z" fill="#1E5FA8"/>
+        <path d="M37 30 L46 38 L42 42 L34 35 Z" fill="#1E5FA8"/>
+        <path d="M9 36 q-3 4 1 7 q4 3 7 -1 q1 -4 -3 -6 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+        <path d="M49 36 q3 4 -1 7 q-4 3 -7 -1 q-1 -4 3 -6 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+        <circle cx="29" cy="18" r="8" fill="#E0A87C"/>
+        <path d="M21 17 A8 8 0 0 1 37 16 L37.6 12 L20.6 12.8 Z" fill="#1B3A4A"/>
+        <path d="M20.4 12.8 L37.6 12 L38 9.6 L20 10.4 Z" fill="#2C79C9"/>
+        <g stroke="#8FA6B4" stroke-width="1" opacity=".95">
+          <line x1="33" y1="20" x2="38" y2="19.4"/>
+          <line x1="33" y1="23" x2="37.4" y2="22.4"/>
+        </g>
+      </svg>
+      <figcaption>MS Dhoni</figcaption>
+    </figure>
+  </div>
 </section>
 <!-- ===== END Poomuthu-G ===== -->
 
