@@ -267,21 +267,55 @@
 <!-- ===== END sathya-vv ===== -->
 
 <!-- ===== START saktheeswaranCM ===== -->
-<section class="card" id="saktheeswaranCM" style="border-color:#2E7D32; border-width:2px; background:linear-gradient(160deg, #E8F5E4, #C6E5BD); transition: transform 0.2s ease, box-shadow 0.2s ease;">
+<section class="card" id="saktheeswaranCM" style="border-color:#2E7D32; border-width:2px; background:linear-gradient(160deg, #E8F5E4, #C6E5BD); transition: transform 0.25s ease, box-shadow 0.25s ease;">
   <style>
     #saktheeswaranCM h2 a { color:#1B5E20; border-bottom-color:#2E7D32; }
     #saktheeswaranCM .who { color:#2F5D33; }
     #saktheeswaranCM .prog { margin:6px 0 0; font-size:.85rem; font-weight:600; color:#1B5E20; }
     #saktheeswaranCM .note { margin:6px 0 0; font-size:.9rem; color:#24303F; }
-    #saktheeswaranCM .photo { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:52% 30%;
-                              border-radius:8px; margin-bottom:12px; display:block;
-                              border:1px solid #2E7D32; }
+
+    /* photo frame: clips the zoom, carries the glow and the sheen */
+    #saktheeswaranCM .frame { position:relative; overflow:hidden; border-radius:10px;
+                              margin-bottom:12px; border:1px solid #2E7D32;
+                              box-shadow:0 4px 14px rgba(46,125,50,0.22);
+                              transition:box-shadow .35s ease; }
+    #saktheeswaranCM .photo { width:100%; aspect-ratio:4/3; object-fit:cover;
+                              object-position:52% 30%; display:block;
+                              filter:saturate(.90) contrast(1.03);
+                              transition:transform .6s ease, filter .6s ease; }
+    /* soft green wash rising from the bottom, ties photo to the card */
+    #saktheeswaranCM .frame::after { content:""; position:absolute; inset:0; pointer-events:none;
+                                     background:linear-gradient(to top, rgba(27,94,32,0.34), rgba(27,94,32,0) 58%);
+                                     transition:opacity .45s ease; opacity:1; }
+    /* diagonal light sweep on hover */
+    #saktheeswaranCM .frame::before { content:""; position:absolute; top:-60%; left:-120%;
+                                      width:60%; height:220%; pointer-events:none; z-index:2;
+                                      background:linear-gradient(90deg, rgba(255,255,255,0) 0%,
+                                                 rgba(255,255,255,.42) 50%, rgba(255,255,255,0) 100%);
+                                      transform:rotate(18deg); }
+    #saktheeswaranCM:hover .frame::before { animation:sakthe-cm-sheen 1.1s ease-out; }
+    #saktheeswaranCM:hover .photo { transform:scale(1.07); filter:saturate(1.10) contrast(1.06); }
+    #saktheeswaranCM:hover .frame::after { opacity:.55; }
+    #saktheeswaranCM:hover .frame { box-shadow:0 10px 26px rgba(46,125,50,0.38); }
+
     #saktheeswaranCM .site { display:inline-block; margin-top:12px; font-size:.8rem; color:#1B5E20;
-                             text-decoration:none; border-bottom:1px solid #2E7D32; }
-    #saktheeswaranCM .site:hover { color:#2E7D32; }
-    #saktheeswaranCM:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(46,125,50,0.25); }
+                             text-decoration:none; border-bottom:1px solid #2E7D32;
+                             transition:color .25s ease, border-bottom-color .25s ease; }
+    #saktheeswaranCM .site:hover { color:#2E7D32; border-bottom-color:#1B5E20; }
+    #saktheeswaranCM:hover { transform:translateY(-5px); box-shadow:0 12px 26px rgba(46,125,50,0.28); }
+
+    @keyframes sakthe-cm-sheen { from { left:-120%; } to { left:170%; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      #saktheeswaranCM .photo, #saktheeswaranCM, #saktheeswaranCM .frame { transition:none; }
+      #saktheeswaranCM:hover .photo { transform:none; }
+      #saktheeswaranCM:hover { transform:none; }
+      #saktheeswaranCM:hover .frame::before { animation:none; }
+    }
   </style>
-  <img class="photo" src="images/saktheeswaranCM.jpg" alt="Saktheeswaran">
+  <div class="frame">
+    <img class="photo" src="images/saktheeswaranCM.jpg" alt="Saktheeswaran">
+  </div>
   <h2><a href="https://github.com/saktheeswaranCM">@saktheeswaranCM</a></h2>
   <p class="who">Saktheeswaran &middot; DEEP Cuddalore</p>
   <p class="prog">DEEP &mdash; Making a Difference.</p>
