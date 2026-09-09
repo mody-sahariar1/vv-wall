@@ -31,10 +31,52 @@
 </header>
 <main>
 <!-- ===== START mody-sahariar1 ===== -->
-<section class="card" id="mody-sahariar1">
+<section class="card" id="mody-sahariar1" style="grid-column:1/-1;padding:0;overflow:hidden;border-color:#1b2430;background:#0b0f16;color:#e8ecf2">
+<style>
+  #mody-sahariar1 .clash{position:relative;height:250px;background:radial-gradient(ellipse at 50% 120%,#1c2a3f 0%,#0b0f16 60%);overflow:hidden}
+  #mody-sahariar1 .moon{position:absolute;top:18px;right:40px;width:56px;height:56px;border-radius:50%;background:#f3e9c7;box-shadow:0 0 40px 10px rgba(243,233,199,.25)}
+  #mody-sahariar1 .ground{position:absolute;left:0;right:0;bottom:0;height:34px;background:linear-gradient(#182233,#0b0f16)}
+  #mody-sahariar1 .ninja{position:absolute;bottom:34px;width:70px;height:120px;animation-duration:2.6s;animation-timing-function:cubic-bezier(.7,0,.3,1);animation-iteration-count:infinite}
+  #mody-sahariar1 .n1{left:6%;animation-name:m1-run-l}
+  #mody-sahariar1 .n2{right:6%;animation-name:m1-run-r}
+  #mody-sahariar1 .orb{position:absolute;top:44px;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle,#dff6ff 0%,#4fc3ff 35%,rgba(79,195,255,0) 72%);box-shadow:0 0 18px 6px rgba(79,195,255,.55);animation:m1-spin .5s linear infinite}
+  #mody-sahariar1 .n1 .orb{right:-22px}
+  #mody-sahariar1 .bolt{position:absolute;top:36px;left:-30px;width:52px;height:52px}
+  #mody-sahariar1 .bolt path{stroke:#b9f3ff;stroke-width:3;fill:none;filter:drop-shadow(0 0 6px #7be7ff);animation:m1-flicker .12s steps(2) infinite}
+  #mody-sahariar1 .flash{position:absolute;left:50%;top:40%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#fff;opacity:0;animation:m1-flash 2.6s cubic-bezier(.7,0,.3,1) infinite}
+  #mody-sahariar1 .ember{position:absolute;bottom:40px;width:4px;height:4px;border-radius:50%;background:#ffb347;opacity:0;animation:m1-ember 2.6s linear infinite}
+  #mody-sahariar1 .cap{padding:14px 20px 18px}
+  #mody-sahariar1 .cap h2{margin:0 0 4px;font-size:1.05rem}
+  #mody-sahariar1 .cap h2 a{color:#e8ecf2;border-bottom-color:#5b6b7b}
+  #mody-sahariar1 .cap .who{color:#9aa4b5;margin:0 0 6px}
+  #mody-sahariar1 .cap .line{color:#e6b455;font-size:.85rem;margin:0}
+  @keyframes m1-run-l{0%,15%{transform:translateX(0)}45%,55%{transform:translateX(calc(50vw - 160px))}85%,100%{transform:translateX(0)}}
+  @keyframes m1-run-r{0%,15%{transform:translateX(0)}45%,55%{transform:translateX(calc(-50vw + 160px))}85%,100%{transform:translateX(0)}}
+  @keyframes m1-spin{to{transform:rotate(360deg)}}
+  @keyframes m1-flicker{50%{opacity:.35}}
+  @keyframes m1-flash{0%,44%{opacity:0;transform:scale(1)}50%{opacity:1;transform:scale(28)}62%{opacity:0;transform:scale(40)}100%{opacity:0}}
+  @keyframes m1-ember{0%,48%{opacity:0;transform:translate(0,0)}52%{opacity:1}100%{opacity:0;transform:translate(var(--dx),-120px)}}
+  @media (max-width:700px){#mody-sahariar1 .clash{height:200px}#mody-sahariar1 .ninja{transform-origin:bottom;scale:.8}}
+</style>
+<div class="clash" aria-label="Two ninja silhouettes clash in the middle of the card">
+  <div class="moon"></div>
+  <div class="ninja n1">
+    <svg viewBox="0 0 70 120" width="70" height="120"><g fill="#ff7a1a"><path d="M35 8l-9-6 6 10-12-2 9 6-11 4 12 0-6 8 11-5z"/><circle cx="35" cy="26" r="12"/><path d="M22 40h26l6 34-8 2-3-16v58h-9V78h-2v40h-9V76l-4 16-8-2z"/></g><path d="M23 30h24" stroke="#0b0f16" stroke-width="4"/></svg>
+    <div class="orb"></div>
+  </div>
+  <div class="ninja n2">
+    <svg viewBox="0 0 70 120" width="70" height="120"><g fill="#3a4a7a"><path d="M20 22c4-14 26-16 32-6-6-4-12-2-14 4 8 2 14 8 12 16-4-8-12-6-20-2z"/><circle cx="35" cy="26" r="12"/><path d="M22 40h26l6 34-8 2-3-16v58h-9V78h-2v40h-9V76l-4 16-8-2z"/></g></svg>
+    <svg class="bolt" viewBox="0 0 52 52"><path d="M4 26l8-6 4 10 6-14 6 12 8-16 4 10 8-8"/><path d="M6 32l10 2 4 8 8-12 6 6 8-10"/></svg>
+  </div>
+  <div class="flash"></div>
+  <i class="ember" style="left:47%;--dx:-40px"></i><i class="ember" style="left:50%;--dx:10px;animation-delay:.1s"></i><i class="ember" style="left:53%;--dx:45px;animation-delay:.05s"></i><i class="ember" style="left:49%;--dx:-15px;animation-delay:.15s"></i><i class="ember" style="left:51%;--dx:30px;animation-delay:.2s"></i>
+  <div class="ground"></div>
+</div>
+<div class="cap">
   <h2><a href="https://github.com/mody-sahariar1">@mody-sahariar1</a></h2>
-  <p class="who">Sahariar Mody &middot; Stratos x CoLab</p>
-  <p class="empty">Unclaimed. Open Claude Code in this folder and say: claim my card.</p>
+  <p class="who">Sahariar Mody &middot; Stratos x CoLab &middot; runs these sessions</p>
+  <p class="line">Rasengan meets Chidori. Built by talking to Claude Code, no git typed. Your card can do this too.</p>
+</div>
 </section>
 <!-- ===== END mody-sahariar1 ===== -->
 
