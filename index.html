@@ -34,31 +34,34 @@
 <section class="card" id="mody-sahariar1" style="grid-column:1/-1;padding:0;overflow:hidden;border-color:#1b2430;background:#0b0f16;color:#e8ecf2">
 <style>
   #mody-sahariar1 .scene{position:relative;height:340px;overflow:hidden;background:#0b0f16}
-  #mody-sahariar1 .sky{position:absolute;inset:0;opacity:0;animation:24s linear infinite}
+  #mody-sahariar1 .sky{position:absolute;inset:0;opacity:0;animation:30s linear infinite}
+  #mody-sahariar1 .sky.spring{background:linear-gradient(#ffb88c 0%,#ffd6bf 50%,#fff2e4 100%);animation-name:m1-s-spring}
   #mody-sahariar1 .sky.summer{background:linear-gradient(#5fb2ff 0%,#bfe3ff 70%,#e9f6ff 100%);animation-name:m1-s-summer}
   #mody-sahariar1 .sky.rain{background:linear-gradient(#3a4450 0%,#5b6570 60%,#7a838c 100%);animation-name:m1-s-rain}
   #mody-sahariar1 .sky.snow{background:linear-gradient(#aebfd0 0%,#dfe8f0 60%,#f4f7fa 100%);animation-name:m1-s-snow}
   #mody-sahariar1 .sky.night{background:radial-gradient(ellipse at 50% 120%,#1c2a3f 0%,#0b0f16 60%);animation-name:m1-s-night}
-  #mody-sahariar1 .stars{position:absolute;inset:0;opacity:0;animation:m1-s-night 24s linear infinite;
+  #mody-sahariar1 .stars{position:absolute;inset:0;opacity:0;animation:m1-s-night 30s linear infinite;
     background-image:radial-gradient(1.5px 1.5px at 12% 22%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 28% 12%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 41% 30%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 57% 18%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 66% 34%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 78% 10%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 88% 26%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 22% 40%,#fff 50%,transparent 51%)}
-  #mody-sahariar1 .sun{position:absolute;top:26px;right:54px;width:64px;height:64px;border-radius:50%;animation:m1-sun 24s linear infinite}
-  #mody-sahariar1 .moon{position:absolute;top:26px;right:54px;width:64px;height:64px;border-radius:50%;background:transparent;box-shadow:inset -13px 7px 0 0 #f3e9c7;opacity:0;animation:m1-s-night 24s linear infinite;filter:drop-shadow(0 0 14px rgba(243,233,199,.35))}
-  #mody-sahariar1 .cloud{position:absolute;width:150px;height:44px;border-radius:40px;background:rgba(30,36,44,.75);opacity:0;animation:m1-cloud 24s linear infinite}
+  #mody-sahariar1 .sun{position:absolute;top:26px;right:54px;width:64px;height:64px;border-radius:50%;animation:m1-sun 30s linear infinite}
+  #mody-sahariar1 .moon{position:absolute;top:26px;right:54px;width:64px;height:64px;border-radius:50%;background:transparent;box-shadow:inset -13px 7px 0 0 #f3e9c7;opacity:0;animation:m1-s-night 30s linear infinite;filter:drop-shadow(0 0 14px rgba(243,233,199,.35))}
+  #mody-sahariar1 .cloud{position:absolute;width:150px;height:44px;border-radius:40px;background:rgba(30,36,44,.75);opacity:0;animation:m1-cloud 30s linear infinite}
   #mody-sahariar1 .cloud:before{content:"";position:absolute;left:34px;top:-24px;width:70px;height:60px;border-radius:50%;background:inherit}
   #mody-sahariar1 .c1{top:26px;left:12%}#mody-sahariar1 .c2{top:48px;left:55%;width:190px}#mody-sahariar1 .c3{top:14px;right:8%;width:120px}
-  #mody-sahariar1 .rain{position:absolute;inset:0;opacity:0;animation:m1-rainop 24s linear infinite;overflow:hidden}
+  #mody-sahariar1 .rain{position:absolute;inset:0;opacity:0;animation:m1-rainop 30s linear infinite;overflow:hidden}
   #mody-sahariar1 .drop{position:absolute;top:-24px;width:2px;height:16px;border-radius:2px;transform:rotate(12deg);background:linear-gradient(to bottom,rgba(215,232,255,0) 0%,rgba(215,232,255,.9) 70%,#eaf4ff 100%);animation:m1-drop .8s linear infinite}
   #mody-sahariar1 .drop.far{height:10px;width:1.5px;opacity:.5;animation-duration:1.1s}
   #mody-sahariar1 .splash{position:absolute;bottom:40px;width:6px;height:3px;border-radius:50%;border:1px solid rgba(215,232,255,.8);border-top-color:transparent;opacity:0;animation:m1-splash .8s linear infinite}
-  #mody-sahariar1 .snow{position:absolute;inset:0;opacity:0;animation:m1-s-snow 24s linear infinite}
+  #mody-sahariar1 .snow{position:absolute;inset:0;opacity:0;animation:m1-s-snow 30s linear infinite}
+  #mody-sahariar1 .petals{position:absolute;inset:0;opacity:0;animation:m1-s-spring 30s linear infinite;overflow:hidden}
+  #mody-sahariar1 .petal{position:absolute;left:0;width:9px;height:6px;border-radius:60% 40% 60% 40%;background:linear-gradient(135deg,#ffc2d1,#ff8fb1);opacity:.95;animation:m1-petal 9s linear infinite}
   #mody-sahariar1 .flake{position:absolute;top:-8px;width:6px;height:6px;border-radius:50%;background:#fff;opacity:.9;animation:m1-flake 4.2s linear infinite}
-  #mody-sahariar1 .ground{position:absolute;left:0;right:0;bottom:0;height:44px;background:#2f6b3a;animation:m1-ground 24s linear infinite}
+  #mody-sahariar1 .ground{position:absolute;left:0;right:0;bottom:0;height:44px;background:#2f6b3a;animation:m1-ground 30s linear infinite}
   #mody-sahariar1 .ninja{position:absolute;bottom:44px;width:84px;height:120px;animation-duration:6s,6s;animation-iteration-count:infinite}
   #mody-sahariar1 .n1{left:6%;animation-name:m1-run-l,m1-jump;animation-timing-function:cubic-bezier(.65,0,.35,1),cubic-bezier(.3,.9,.6,1)}
   #mody-sahariar1 .n2{right:6%;transform:scaleX(-1);animation-name:m1-run-r,m1-jump;animation-timing-function:cubic-bezier(.65,0,.35,1),cubic-bezier(.3,.9,.6,1)}
   #mody-sahariar1 .orb{position:absolute;top:42px;right:-14px;width:32px;height:32px;border-radius:50%;background:radial-gradient(circle,#dff6ff 0%,#4fc3ff 35%,rgba(79,195,255,0) 72%);box-shadow:0 0 18px 6px rgba(79,195,255,.55);animation:m1-spin .5s linear infinite,m1-power 6s linear infinite}
   #mody-sahariar1 .bolt{position:absolute;top:32px;right:-22px;width:52px;height:52px;animation:m1-power 6s linear infinite}
-  #mody-sahariar1 .bolt path{stroke:#b9f3ff;stroke-width:3;fill:none;filter:drop-shadow(0 0 6px #7be7ff);animation:m1-flicker .12s steps(2) infinite}
+  #mody-sahariar1 .bolt path{stroke:#fff1a8;stroke-width:3;fill:none;filter:drop-shadow(0 0 5px #ffd93d) drop-shadow(0 0 12px rgba(255,200,0,.7));animation:m1-flicker .12s steps(2) infinite}
   #mody-sahariar1 .strike{position:absolute;left:50%;top:-8px;width:60px;height:92px;margin-left:-30px;opacity:0;animation:m1-strike 6s linear infinite}
   #mody-sahariar1 .strike path{stroke:#eaf9ff;stroke-width:4;fill:none;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200;filter:drop-shadow(0 0 8px #9ff0ff) drop-shadow(0 0 18px #4fc3ff);animation:m1-draw 6s linear infinite}
   #mody-sahariar1 .strike .thin{stroke-width:1.5;stroke:#fff}
@@ -85,29 +88,32 @@
   @keyframes m1-impact{0%,27%{opacity:0;transform:scale(1)}28%{opacity:1}36%{opacity:0;transform:scale(11)}100%{opacity:0}}
   @keyframes m1-white{0%,27%{opacity:0}28%{opacity:.85}31%{opacity:0}100%{opacity:0}}
   @keyframes m1-ember{0%,28%{opacity:0;transform:translate(0,0)}30%{opacity:1}44%{opacity:0;transform:translate(var(--dx),110px)}100%{opacity:0}}
+  @keyframes m1-s-spring{0%,17%{opacity:1}23%,95%{opacity:0}100%{opacity:1}}
+  @keyframes m1-s-summer{0%,17%{opacity:0}23%,37%{opacity:1}43%,100%{opacity:0}}
+  @keyframes m1-s-rain{0%,37%{opacity:0}43%,57%{opacity:1}63%,100%{opacity:0}}
+  @keyframes m1-s-snow{0%,57%{opacity:0}63%,77%{opacity:1}83%,100%{opacity:0}}
+  @keyframes m1-s-night{0%,77%{opacity:0}83%,95%{opacity:1}100%{opacity:0}}
+  @keyframes m1-cloud{0%,37%{opacity:0;transform:translateX(0)}43%,57%{opacity:1}63%,77%{opacity:.35}83%,100%{opacity:0;transform:translateX(60px)}}
+  @keyframes m1-rainop{0%,37%{opacity:0}43%,57%{opacity:1}63%,100%{opacity:0}}
+  @keyframes m1-sun{0%,17%{opacity:1;background:#ffb36b;box-shadow:0 0 44px 14px rgba(255,150,100,.45)}23%,37%{opacity:1;background:#ffd23f;box-shadow:0 0 40px 12px rgba(255,210,63,.45)}43%,57%{opacity:.35;background:#c9ced6;box-shadow:0 0 20px 6px rgba(200,206,214,.2)}63%,77%{opacity:1;background:#f7f2e4;box-shadow:0 0 30px 8px rgba(247,242,228,.4)}83%,95%{opacity:0;background:#f7f2e4;box-shadow:none}100%{opacity:1;background:#ffb36b;box-shadow:0 0 44px 14px rgba(255,150,100,.45)}}
+  @keyframes m1-ground{0%,17%{background:#5aa35c}23%,37%{background:#2f6b3a}43%,57%{background:#3b3f46}63%,77%{background:#e9eef5}83%,95%{background:#182233}100%{background:#5aa35c}}
+  @keyframes m1-petal{0%{transform:translate(-40px,0) rotate(0deg)}25%{transform:translate(260px,40px) rotate(160deg)}50%{transform:translate(540px,20px) rotate(330deg)}75%{transform:translate(820px,90px) rotate(500deg)}100%{transform:translate(1120px,140px) rotate(680deg)}}
   @keyframes m1-spin{to{transform:rotate(360deg)}}
   @keyframes m1-flicker{50%{opacity:.35}}
-  @keyframes m1-s-summer{0%,21%{opacity:1}27%,94%{opacity:0}100%{opacity:1}}
-  @keyframes m1-s-rain{0%,21%{opacity:0}27%,46%{opacity:1}52%,100%{opacity:0}}
-  @keyframes m1-s-snow{0%,46%{opacity:0}52%,71%{opacity:1}77%,100%{opacity:0}}
-  @keyframes m1-s-night{0%,71%{opacity:0}77%,94%{opacity:1}100%{opacity:0}}
-  @keyframes m1-cloud{0%,21%{opacity:0;transform:translateX(0)}27%,46%{opacity:1}52%,71%{opacity:.35}77%,100%{opacity:0;transform:translateX(60px)}}
-  @keyframes m1-rainop{0%,21%{opacity:0}27%,46%{opacity:1}52%,100%{opacity:0}}
   @keyframes m1-drop{0%{transform:translate(0,0) rotate(12deg)}100%{transform:translate(-70px,380px) rotate(12deg)}}
   @keyframes m1-splash{0%,70%{opacity:0;transform:scale(.4)}78%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(2.2)}}
   @keyframes m1-flake{0%{transform:translate(0,0)}50%{transform:translate(14px,170px)}100%{transform:translate(-6px,350px)}}
-  @keyframes m1-sun{0%,21%{opacity:1;background:#ffd23f;box-shadow:0 0 40px 12px rgba(255,210,63,.45)}27%,46%{opacity:.35;background:#c9ced6;box-shadow:0 0 20px 6px rgba(200,206,214,.2)}52%,71%{opacity:1;background:#f7f2e4;box-shadow:0 0 30px 8px rgba(247,242,228,.4)}77%,94%{opacity:0;background:#f7f2e4;box-shadow:none}100%{opacity:1;background:#ffd23f;box-shadow:0 0 40px 12px rgba(255,210,63,.45)}}
-  @keyframes m1-ground{0%,21%{background:#2f6b3a}27%,46%{background:#3b3f46}52%,71%{background:#e9eef5}77%,94%{background:#182233}100%{background:#2f6b3a}}
   #mody-sahariar1 .fig{transform-box:fill-box;transform-origin:50% 100%;animation:m1-bob 6s linear infinite}
   #mody-sahariar1 .leg,#mody-sahariar1 .armb{transform-box:fill-box;transform-origin:50% 0;animation:6s linear infinite}
   #mody-sahariar1 .l1{animation-name:m1-leg1}#mody-sahariar1 .l2{animation-name:m1-leg2}#mody-sahariar1 .armb{animation-name:m1-armb}
   @media (max-width:700px){#mody-sahariar1 .scene{height:260px}#mody-sahariar1 .ninja{zoom:.8}#mody-sahariar1 .cap .site{margin-left:0}}
 </style>
 <div class="scene" aria-label="Two ninja run at each other, powers vanish on impact and lightning strikes from the sky, while the seasons cycle behind them">
-  <div class="sky night"></div><div class="sky summer"></div><div class="sky rain"></div><div class="sky snow"></div>
+  <div class="sky night"></div><div class="sky spring"></div><div class="sky summer"></div><div class="sky rain"></div><div class="sky snow"></div>
   <div class="stars"></div>
   <div class="sun"></div><div class="moon"></div>
   <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <div class="petals"><i class="petal" style="top:61%;animation-delay:-7.79s;animation-duration:10.9s;scale:1.35"></i><i class="petal" style="top:61%;animation-delay:-4.57s;animation-duration:9.8s;scale:0.93"></i><i class="petal" style="top:69%;animation-delay:-4.28s;animation-duration:10.0s;scale:0.93"></i><i class="petal" style="top:61%;animation-delay:-2.73s;animation-duration:7.9s;scale:1.37"></i><i class="petal" style="top:9%;animation-delay:-5.36s;animation-duration:9.1s;scale:1.12"></i><i class="petal" style="top:24%;animation-delay:-5.61s;animation-duration:10.8s;scale:0.84"></i><i class="petal" style="top:8%;animation-delay:-1.71s;animation-duration:8.5s;scale:0.82"></i><i class="petal" style="top:63%;animation-delay:-2.94s;animation-duration:9.9s;scale:0.94"></i><i class="petal" style="top:33%;animation-delay:-5.76s;animation-duration:9.5s;scale:1.26"></i><i class="petal" style="top:62%;animation-delay:-5.89s;animation-duration:9.1s;scale:1.19"></i><i class="petal" style="top:14%;animation-delay:-6.37s;animation-duration:8.8s;scale:0.96"></i><i class="petal" style="top:40%;animation-delay:-0.27s;animation-duration:9.8s;scale:0.88"></i><i class="petal" style="top:17%;animation-delay:-7.62s;animation-duration:9.0s;scale:1.47"></i><i class="petal" style="top:4%;animation-delay:-1.92s;animation-duration:11.2s;scale:0.84"></i><i class="petal" style="top:52%;animation-delay:-8.82s;animation-duration:9.1s;scale:0.85"></i><i class="petal" style="top:29%;animation-delay:-7.01s;animation-duration:8.6s;scale:0.86"></i><i class="petal" style="top:46%;animation-delay:-0.14s;animation-duration:9.1s;scale:1.45"></i><i class="petal" style="top:21%;animation-delay:-2.22s;animation-duration:7.9s;scale:0.84"></i></div>
   <div class="rain"><i class="drop far" style="left:42%;animation-delay:-0.76s"></i><i class="drop" style="left:51%;animation-delay:-0.52s"></i><i class="drop" style="left:10%;animation-delay:-0.66s"></i><i class="drop far" style="left:13%;animation-delay:-0.29s"></i><i class="drop" style="left:8%;animation-delay:-0.73s"></i><i class="drop" style="left:28%;animation-delay:-0.03s"></i><i class="drop far" style="left:56%;animation-delay:-0.33s"></i><i class="drop" style="left:31%;animation-delay:-0.07s"></i><i class="drop" style="left:55%;animation-delay:-0.05s"></i><i class="drop far" style="left:73%;animation-delay:-0.1s"></i><i class="drop" style="left:29%;animation-delay:-0.5s"></i><i class="drop" style="left:75%;animation-delay:-0.76s"></i><i class="drop far" style="left:74%;animation-delay:-0.47s"></i><i class="drop" style="left:7%;animation-delay:-0.78s"></i><i class="drop" style="left:6%;animation-delay:-0.45s"></i><i class="drop far" style="left:18%;animation-delay:-0.23s"></i><i class="drop" style="left:19%;animation-delay:-0.43s"></i><i class="drop" style="left:74%;animation-delay:-0.25s"></i><i class="drop far" style="left:88%;animation-delay:-0.14s"></i><i class="drop" style="left:75%;animation-delay:-0.46s"></i><i class="drop" style="left:25%;animation-delay:-0.3s"></i><i class="drop far" style="left:71%;animation-delay:-0.57s"></i><i class="drop" style="left:73%;animation-delay:-0.05s"></i><i class="drop" style="left:27%;animation-delay:-0.4s"></i><i class="drop far" style="left:69%;animation-delay:-0.34s"></i><i class="drop" style="left:41%;animation-delay:-0.37s"></i><i class="drop" style="left:59%;animation-delay:-0.29s"></i><i class="drop far" style="left:32%;animation-delay:-0.64s"></i><i class="drop" style="left:90%;animation-delay:-0.62s"></i><i class="drop" style="left:11%;animation-delay:-0.46s"></i><i class="splash" style="left:71%;animation-delay:-0.4s"></i><i class="splash" style="left:47%;animation-delay:-0.58s"></i><i class="splash" style="left:40%;animation-delay:-0.49s"></i><i class="splash" style="left:13%;animation-delay:-0.09s"></i><i class="splash" style="left:57%;animation-delay:-0.13s"></i><i class="splash" style="left:47%;animation-delay:-0.12s"></i><i class="splash" style="left:66%;animation-delay:-0.34s"></i><i class="splash" style="left:89%;animation-delay:-0.06s"></i></div>
   <div class="snow"><i class="flake" style="left:5%"></i><i class="flake" style="left:14%;animation-delay:-1.1s"></i><i class="flake" style="left:23%;animation-delay:-2.6s;width:4px;height:4px"></i><i class="flake" style="left:33%;animation-delay:-.6s"></i><i class="flake" style="left:42%;animation-delay:-3.3s;width:5px;height:5px"></i><i class="flake" style="left:51%;animation-delay:-1.9s"></i><i class="flake" style="left:60%;animation-delay:-.2s;width:4px;height:4px"></i><i class="flake" style="left:69%;animation-delay:-2.2s"></i><i class="flake" style="left:78%;animation-delay:-3.8s;width:5px;height:5px"></i><i class="flake" style="left:87%;animation-delay:-1.5s"></i><i class="flake" style="left:95%;animation-delay:-2.9s;width:4px;height:4px"></i><i class="flake" style="left:47%;animation-delay:-3.6s"></i></div>
   <div class="ninja n1">
