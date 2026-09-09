@@ -292,12 +292,26 @@
     #Poomuthu-G h2 a { color:#164E4B; border-bottom-color:#2F7E7C; }
     #Poomuthu-G .who { color:#356B68; }
     #Poomuthu-G .quote { color:#3F7A77; font-style:italic; font-size:.8rem; margin:10px 0 0; }
-    #Poomuthu-G .cb-row { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:14px; }
+    #Poomuthu-G .cb-row { display:flex; align-items:flex-end; justify-content:space-between; gap:6px; margin-top:14px; }
     #Poomuthu-G .cb-star { margin:0; flex:0 0 auto; text-align:center; }
-    #Poomuthu-G .cb-star svg { width:52px; height:66px; display:block; }
-    #Poomuthu-G .cb-star figcaption { font-size:.56rem; font-weight:700; letter-spacing:.02em; color:#356B68; margin-top:1px; }
-    #Poomuthu-G .cb-link { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; background:#2F7E7C; color:#F0FAF8; font-size:.72rem; font-weight:600; letter-spacing:.01em; text-align:center; text-decoration:none; transition:background .2s ease, transform .2s ease; }
+    #Poomuthu-G .cb-star svg { width:58px; height:74px; display:block; overflow:visible; }
+    #Poomuthu-G .cb-star figcaption { font-size:.55rem; font-weight:700; letter-spacing:.02em; color:#356B68; margin-top:1px; }
+    #Poomuthu-G .cb-link { display:inline-flex; align-items:center; margin-bottom:14px; padding:7px 10px; border-radius:999px; background:#2F7E7C; color:#F0FAF8; font-size:.68rem; font-weight:600; letter-spacing:.01em; text-align:center; text-decoration:none; transition:background .2s ease, transform .2s ease; }
     #Poomuthu-G .cb-link:hover { background:#164E4B; transform:translateY(-1px); }
+    #Poomuthu-G .vk-body { transform-box:view-box; transform-origin:30px 62px; animation:pg-vk-leap 2.6s ease-in-out infinite; }
+    #Poomuthu-G .vk-arm-l { transform-box:view-box; transform-origin:23px 31px; animation:pg-vk-arml 2.6s ease-in-out infinite; }
+    #Poomuthu-G .vk-arm-r { transform-box:view-box; transform-origin:37px 31px; animation:pg-vk-armr 2.6s ease-in-out infinite; }
+    #Poomuthu-G .vk-mouth { transform-box:view-box; transform-origin:30px 22px; animation:pg-vk-roar 2.6s ease-in-out infinite; }
+    #Poomuthu-G .msd-body { transform-box:view-box; transform-origin:30px 64px; animation:pg-msd-twist 2.6s ease-in-out infinite; }
+    #Poomuthu-G .msd-bat { transform-box:view-box; transform-origin:41px 34px; animation:pg-msd-heli 2.6s cubic-bezier(.45,0,.25,1) infinite; }
+    #Poomuthu-G .msd-whoosh { animation:pg-msd-whoosh 2.6s ease-out infinite; }
+    @keyframes pg-vk-leap { 0%,100% { transform:translateY(0); } 45% { transform:translateY(-3.5px); } }
+    @keyframes pg-vk-arml { 0%,100% { transform:rotate(6deg); } 45% { transform:rotate(-16deg); } }
+    @keyframes pg-vk-armr { 0%,100% { transform:rotate(-6deg); } 45% { transform:rotate(16deg); } }
+    @keyframes pg-vk-roar { 0%,100% { transform:scaleY(.45); } 45% { transform:scaleY(1.3); } }
+    @keyframes pg-msd-twist { 0%,25% { transform:rotate(0deg); } 60% { transform:rotate(-10deg); } 100% { transform:rotate(0deg); } }
+    @keyframes pg-msd-heli { 0%,20% { transform:rotate(-45deg); } 62% { transform:rotate(315deg); } 100% { transform:rotate(315deg); } }
+    @keyframes pg-msd-whoosh { 0%,25% { opacity:0; stroke-dashoffset:26; } 55% { opacity:.75; stroke-dashoffset:0; } 100% { opacity:0; stroke-dashoffset:0; } }
     #Poomuthu-G:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(47,126,124,0.30); }
     #Poomuthu-G .ck { width:100%; display:block; border-radius:8px; margin-bottom:12px; }
     #Poomuthu-G .ck-spin { transform-box:view-box; transform-origin:152px 44px; animation:ck-pg-spin 2.4s linear infinite; }
@@ -312,7 +326,9 @@
     @keyframes ck-pg-cheer { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-2.4px); } }
     @media (prefers-reduced-motion: reduce) {
       #Poomuthu-G .ck-spin, #Poomuthu-G .ck-fly, #Poomuthu-G .ck-bat,
-      #Poomuthu-G .ck-glow, #Poomuthu-G .ck-fan { animation:none; }
+      #Poomuthu-G .ck-glow, #Poomuthu-G .ck-fan, #Poomuthu-G .vk-body,
+      #Poomuthu-G .vk-arm-l, #Poomuthu-G .vk-arm-r, #Poomuthu-G .vk-mouth,
+      #Poomuthu-G .msd-body, #Poomuthu-G .msd-bat, #Poomuthu-G .msd-whoosh { animation:none; }
     }
   </style>
   <svg class="ck" viewBox="0 0 200 130" role="img" aria-label="Illustration of a cricket batsman in a yellow jersey under floodlights, with a spinning red ball and a crowd of cheering fans">
@@ -462,46 +478,67 @@
   <p class="quote">&ldquo;Cuddalore Premier League&rdquo;</p>
   <div class="cb-row">
     <figure class="cb-star">
-      <svg viewBox="0 0 60 76" role="img" aria-label="Batsman in India blues, jersey 18">
-        <ellipse cx="30" cy="71" rx="15" ry="3" fill="#2F7E7C" opacity=".18"/>
-        <path d="M23 46 L20 66 L27 66 L29 47 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
-        <path d="M34 46 L38 66 L45 66 L40 46 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
-        <rect x="18" y="65" width="11" height="4" rx="2" fill="#1B3A4A"/>
-        <rect x="36" y="65" width="11" height="4" rx="2" fill="#1B3A4A"/>
-        <path d="M21 27 L39 27 L42 48 L19 48 Z" fill="#1E5FA8"/>
-        <path d="M21 27 L39 27 L40 33 L20 33 Z" fill="#2C79C9"/>
-        <text x="30" y="45" font-size="9" font-weight="700" fill="#FFD95C" text-anchor="middle" font-family="system-ui, sans-serif">18</text>
-        <path d="M38 29 L49 35 L46 40 L36 34 Z" fill="#1E5FA8"/>
-        <circle cx="49" cy="38" r="3.4" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
-        <line x1="49" y1="38" x2="53" y2="30" stroke="#7A4A22" stroke-width="2.6" stroke-linecap="round"/>
-        <path d="M50.6 28.4 L56 31.6 L53 12 L48.4 13.4 Z" fill="#D9A85F" stroke="#9C6B2F" stroke-width="1" stroke-linejoin="round"/>
-        <circle cx="30" cy="18" r="8" fill="#E0A87C"/>
-        <path d="M22.4 15.6 A8 8 0 0 1 37.8 14.6 L37.8 11.4 A8 8 0 0 0 22.4 12.4 Z" fill="#2B1B12"/>
-        <path d="M23.6 20 Q30 27.6 36.4 20 Q30 23.6 23.6 20 Z" fill="#2B1B12"/>
+      <svg viewBox="0 0 60 76" role="img" aria-label="Caricature of a bearded batsman in India blues, jersey 18, roaring with both arms flung wide in celebration">
+        <ellipse cx="30" cy="70" rx="15" ry="3" fill="#2F7E7C" opacity=".18"/>
+        <g class="vk-body">
+          <path d="M25 47 L21 66 L27 66 L29 48 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+          <path d="M33 47 L37 66 L43 66 L39 48 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+          <rect x="19" y="64.5" width="11" height="4" rx="2" fill="#1B3A4A"/>
+          <rect x="34" y="64.5" width="11" height="4" rx="2" fill="#1B3A4A"/>
+          <path d="M22 28 L38 28 L41 49 L19 49 Z" fill="#1E5FA8"/>
+          <path d="M22 28 L38 28 L38.8 34 L21.2 34 Z" fill="#2C79C9"/>
+          <text x="30" y="46" font-size="8.5" font-weight="700" fill="#FFD95C" text-anchor="middle" font-family="system-ui, sans-serif">18</text>
+          <g class="vk-arm-l">
+            <path d="M23 30 L9.5 21.5 L6.5 26.5 L21 35.5 Z" fill="#1E5FA8"/>
+            <circle cx="7.6" cy="23.6" r="3.4" fill="#E0A87C"/>
+          </g>
+          <g class="vk-arm-r">
+            <path d="M37 30 L50.5 21.5 L53.5 26.5 L39 35.5 Z" fill="#1E5FA8"/>
+            <circle cx="52.4" cy="23.6" r="3.4" fill="#E0A87C"/>
+          </g>
+          <circle cx="30" cy="18" r="8.4" fill="#E0A87C"/>
+          <path d="M21.7 17.2 q1.1 9.8 8.3 9.8 q7.2 0 8.3 -9.8 q-3.1 3.1 -8.3 3.1 q-5.2 0 -8.3 -3.1 Z" fill="#241610"/>
+          <path d="M21.8 15.4 q1 -8.4 8.2 -8.4 q7.2 0 8.2 8.4 q-2.2 -4.4 -8.2 -4.4 q-6 0 -8.2 4.4 Z" fill="#241610"/>
+          <path d="M26.2 20.4 q3.8 -1.6 7.6 0 q-3.8 1.5 -7.6 0 Z" fill="#241610"/>
+          <ellipse class="vk-mouth" cx="30" cy="22.6" rx="2.5" ry="2" fill="#5B2320"/>
+          <path d="M25.2 14.4 q2.2 -1.3 4.2 -.2" fill="none" stroke="#241610" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M34.8 14.4 q-2.2 -1.3 -4.2 -.2" fill="none" stroke="#241610" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="27.2" cy="16.6" r=".95" fill="#1B1B1B"/>
+          <circle cx="32.8" cy="16.6" r=".95" fill="#1B1B1B"/>
+        </g>
       </svg>
       <figcaption>Virat Kohli</figcaption>
     </figure>
     <a class="cb-link" href="https://www.cricbuzz.com/" target="_blank" rel="noopener noreferrer">Live scores on Cricbuzz</a>
     <figure class="cb-star">
-      <svg viewBox="0 0 60 76" role="img" aria-label="Wicketkeeper in India blues, jersey 7">
-        <ellipse cx="30" cy="71" rx="15" ry="3" fill="#2F7E7C" opacity=".18"/>
-        <path d="M22 46 L19 66 L26 66 L28 47 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
-        <path d="M33 46 L37 66 L44 66 L39 46 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
-        <rect x="17" y="65" width="11" height="4" rx="2" fill="#1B3A4A"/>
-        <rect x="35" y="65" width="11" height="4" rx="2" fill="#1B3A4A"/>
-        <path d="M20 27 L38 27 L41 48 L18 48 Z" fill="#1E5FA8"/>
-        <path d="M20 27 L38 27 L39 33 L19 33 Z" fill="#2C79C9"/>
-        <text x="29" y="45" font-size="9" font-weight="700" fill="#FFD95C" text-anchor="middle" font-family="system-ui, sans-serif">7</text>
-        <path d="M21 30 L12 38 L16 42 L24 35 Z" fill="#1E5FA8"/>
-        <path d="M37 30 L46 38 L42 42 L34 35 Z" fill="#1E5FA8"/>
-        <path d="M9 36 q-3 4 1 7 q4 3 7 -1 q1 -4 -3 -6 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
-        <path d="M49 36 q3 4 -1 7 q-4 3 -7 -1 q-1 -4 3 -6 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
-        <circle cx="29" cy="18" r="8" fill="#E0A87C"/>
-        <path d="M21 17 A8 8 0 0 1 37 16 L37.6 12 L20.6 12.8 Z" fill="#1B3A4A"/>
-        <path d="M20.4 12.8 L37.6 12 L38 9.6 L20 10.4 Z" fill="#2C79C9"/>
-        <g stroke="#8FA6B4" stroke-width="1" opacity=".95">
-          <line x1="33" y1="20" x2="38" y2="19.4"/>
-          <line x1="33" y1="23" x2="37.4" y2="22.4"/>
+      <svg viewBox="0 0 60 76" role="img" aria-label="Caricature of a stubbled batsman in India blues, jersey 7, whipping the bat overhead in a helicopter shot">
+        <ellipse cx="30" cy="70" rx="15" ry="3" fill="#2F7E7C" opacity=".18"/>
+        <path class="msd-whoosh" d="M20 40 q14 -22 34 -14" fill="none" stroke="#2F7E7C" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4" stroke-dashoffset="26" opacity="0"/>
+        <g class="msd-body">
+          <path d="M24 47 L19 66 L25.5 66 L28 48 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+          <path d="M33 47 L38.5 66 L45 66 L39 48 Z" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+          <rect x="17" y="64.5" width="11" height="4" rx="2" fill="#1B3A4A"/>
+          <rect x="35.5" y="64.5" width="11" height="4" rx="2" fill="#1B3A4A"/>
+          <path d="M22 28 L38 28 L41 49 L19 49 Z" fill="#1E5FA8"/>
+          <path d="M22 28 L38 28 L38.8 34 L21.2 34 Z" fill="#2C79C9"/>
+          <text x="30" y="46" font-size="8.5" font-weight="700" fill="#FFD95C" text-anchor="middle" font-family="system-ui, sans-serif">7</text>
+          <path d="M23 30 L34 34 L33 38 L21.5 34.5 Z" fill="#1E5FA8"/>
+          <path d="M37 29.5 L43 32.5 L41 36.5 L35.5 33.5 Z" fill="#1E5FA8"/>
+          <circle cx="41" cy="34" r="3.6" fill="#F4F1E6" stroke="#CFC8B4" stroke-width="1"/>
+          <circle cx="30" cy="18" r="8.4" fill="#E0A87C"/>
+          <path d="M21.9 18.6 q1.4 8.4 8.1 8.4 q6.7 0 8.1 -8.4 q-3.4 2.6 -8.1 2.6 q-4.7 0 -8.1 -2.6 Z" fill="#3A2A1E" opacity=".85"/>
+          <path d="M21.7 15.6 q.6 -8.6 8.3 -8.6 q7.7 0 8.3 8.6 q-1.6 -3.4 -5.4 -4.4 q-4.6 2.6 -11.2 4.4 Z" fill="#2A1D14"/>
+          <path d="M26.6 20.6 q3.4 -1.4 6.8 0 q-3.4 1.3 -6.8 0 Z" fill="#3A2A1E" opacity=".85"/>
+          <path d="M27 23.4 q3 1.4 6 0" fill="none" stroke="#8A5A46" stroke-width="1" stroke-linecap="round"/>
+          <path d="M25.4 14.8 q2.4 -1.1 4.2 -.1" fill="none" stroke="#2A1D14" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M34.6 14.8 q-2.4 -1.1 -4.2 -.1" fill="none" stroke="#2A1D14" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="27.3" cy="16.8" r=".95" fill="#1B1B1B"/>
+          <circle cx="32.7" cy="16.8" r=".95" fill="#1B1B1B"/>
+        </g>
+        <g class="msd-bat">
+          <line x1="41" y1="34" x2="45.5" y2="26" stroke="#7A4A22" stroke-width="3" stroke-linecap="round"/>
+          <path d="M43.4 24.4 L49.2 27.6 L56 12.4 L50.2 9.4 Z" fill="#D9A85F" stroke="#9C6B2F" stroke-width="1" stroke-linejoin="round"/>
+          <line x1="46.6" y1="21.4" x2="52.2" y2="14.6" stroke="#B98442" stroke-width=".9" opacity=".8"/>
         </g>
       </svg>
       <figcaption>MS Dhoni</figcaption>
