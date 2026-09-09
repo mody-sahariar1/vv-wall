@@ -148,98 +148,313 @@
 <!-- ===== END sahilmodi1965 ===== -->
 
 <!-- ===== START rmaheshkumar73-code ===== -->
-<section class="card" id="rmaheshkumar73-code" style="background:#0B2447; border-color:#1B3B6F; border-width:2px;">
+<section class="card" id="rmaheshkumar73-code">
   <style>
-    #rmaheshkumar73-code h2 a { color:#F5F7FA; border-bottom-color:#7CA0D4; }
-    #rmaheshkumar73-code .name { margin:0; font-size:.9rem; color:#F5F7FA; }
-    #rmaheshkumar73-code .role { margin:0; font-size:.85rem; color:#E8B84B; }
-    #rmaheshkumar73-code .tagline { margin:6px 0 0; font-size:.75rem; font-style:italic; color:#A9C0E0; }
-    #rmaheshkumar73-code .links { margin:10px 0 0; font-size:.78rem; }
-    #rmaheshkumar73-code .links a { color:#7CA0D4; border-bottom-color:#7CA0D4; }
-    #rmaheshkumar73-code .mk { width:100%; display:block; border-radius:8px; margin-bottom:12px; }
-    #rmaheshkumar73-code .mk-hand { transform-box:view-box; transform-origin:100px 71px; }
-    #rmaheshkumar73-code .mk-min { animation:mk-rmk-spin 12s linear infinite; }
-    #rmaheshkumar73-code .mk-hr { animation:mk-rmk-spin 144s linear infinite; }
-    #rmaheshkumar73-code .mk-star { animation:mk-rmk-twinkle 3.4s ease-in-out infinite; }
-    @keyframes mk-rmk-spin { to { transform:rotate(360deg); } }
-    @keyframes mk-rmk-twinkle { 0%,100% { opacity:.25; } 50% { opacity:1; } }
-    @media (prefers-reduced-motion: reduce) {
-      #rmaheshkumar73-code .mk-min,
-      #rmaheshkumar73-code .mk-hr,
-      #rmaheshkumar73-code .mk-star { animation:none; }
+    /* Every selector is scoped to #rmaheshkumar73-code so nothing leaks onto
+       anyone else's card. Never move these into the shared <style> in <head>. */
+    #rmaheshkumar73-code {
+      background: #141C26;
+      border-color: #141C26;
+      border-left: 3px solid #C1272D;
+    }
+    #rmaheshkumar73-code h2 a {
+      color: #FBF3DA;
+      border-bottom: 1px dotted #E0A32E;
+    }
+    #rmaheshkumar73-code .who { color: #C4B387; }
+    #rmaheshkumar73-code .bio {
+      color: #E2D6B4;
+      font-size: 0.85rem;
+      margin: 0 0 14px;
+    }
+    #rmaheshkumar73-code .links {
+      display: flex;
+      gap: 8px;
+      margin: 0 0 16px;
+    }
+    #rmaheshkumar73-code .links a {
+      font-size: 0.75rem;
+      padding: 4px 11px;
+      border: 1px solid #6B7A88;
+      border-radius: 999px;
+      color: #FBF3DA;
+      text-decoration: none;
+      transition: background .15s ease, border-color .15s ease, color .15s ease;
+    }
+    #rmaheshkumar73-code .links a:hover,
+    #rmaheshkumar73-code .links a:focus-visible {
+      background: #E0A32E;
+      border-color: #E0A32E;
+      color: #141C26;
+    }
+
+    #rmaheshkumar73-code .game {
+      border-top: 1px solid #2C3846;
+      padding-top: 14px;
+    }
+    #rmaheshkumar73-code .game-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: .72rem;
+      color: #8C9AA8;
+      margin-bottom: 8px;
+    }
+    #rmaheshkumar73-code .score { color: #E0A32E; }
+    #rmaheshkumar73-code .board {
+      display: block;
+      margin: 0 auto;
+      background: #0C131B;
+      border: 1px solid #2C3846;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #rmaheshkumar73-code .board:focus-visible {
+      outline: 2px solid #E0A32E;
+      outline-offset: 2px;
+    }
+    #rmaheshkumar73-code .pad {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    #rmaheshkumar73-code .pad button {
+      font-family: inherit;
+      font-size: .8rem;
+      line-height: 1;
+      padding: 7px 10px;
+      min-width: 34px;
+      background: #1E2A36;
+      color: #FBF3DA;
+      border: 1px solid #2C3846;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #rmaheshkumar73-code .pad button:hover { border-color: #E0A32E; }
+    #rmaheshkumar73-code .hint {
+      font-size: .68rem;
+      color: #6B7A88;
+      text-align: center;
+      margin: 8px 0 0;
     }
   </style>
-  <svg class="mk" viewBox="0 0 200 130" role="img" aria-label="Anime-style night illustration of the Kovai Mani Koondu clock tower">
-    <defs>
-      <linearGradient id="mk-sky" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#24467E"/>
-        <stop offset="55%" stop-color="#152F5C"/>
-        <stop offset="100%" stop-color="#0B2447"/>
-      </linearGradient>
-      <linearGradient id="mk-stone" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="#F6EAD0"/>
-        <stop offset="55%" stop-color="#E3D0A6"/>
-        <stop offset="100%" stop-color="#BFA675"/>
-      </linearGradient>
-      <radialGradient id="mk-moon">
-        <stop offset="0%" stop-color="#FFF8DE"/>
-        <stop offset="100%" stop-color="#F0DB9C"/>
-      </radialGradient>
-    </defs>
 
-    <rect width="200" height="130" fill="url(#mk-sky)"/>
-
-    <circle cx="158" cy="25" r="18" fill="#FFF6D8" opacity=".09"/>
-    <circle cx="158" cy="25" r="10.5" fill="url(#mk-moon)"/>
-
-    <g fill="#FFFFFF">
-      <circle class="mk-star" cx="26" cy="19" r="1.4" style="animation-delay:0s"/>
-      <circle class="mk-star" cx="52" cy="34" r="1" style="animation-delay:.7s"/>
-      <circle class="mk-star" cx="16" cy="52" r="1.1" style="animation-delay:1.5s"/>
-      <circle class="mk-star" cx="118" cy="16" r="1.2" style="animation-delay:2.1s"/>
-      <circle class="mk-star" cx="184" cy="58" r="1" style="animation-delay:1.1s"/>
-      <circle class="mk-star" cx="38" cy="72" r=".9" style="animation-delay:2.7s"/>
-      <circle class="mk-star" cx="176" cy="94" r="1.1" style="animation-delay:.4s"/>
-    </g>
-
-    <path d="M0 112 L38 104 L74 110 L126 106 L166 112 L200 105 L200 130 L0 130 Z" fill="#081B37" opacity=".85"/>
-
-    <g stroke="#08182F" stroke-width="2" stroke-linejoin="round">
-      <rect x="70" y="112" width="60" height="18" fill="url(#mk-stone)"/>
-      <rect x="77" y="92" width="46" height="20" fill="url(#mk-stone)"/>
-      <rect x="81" y="50" width="38" height="42" fill="url(#mk-stone)"/>
-      <rect x="86" y="40" width="28" height="10" fill="url(#mk-stone)"/>
-      <path d="M86 40 L100 14 L114 40 Z" fill="#C9553E"/>
-      <circle cx="100" cy="12" r="3" fill="#E8B84B"/>
-      <circle cx="100" cy="71" r="14" fill="#FFF6DC"/>
-    </g>
-
-    <g fill="#E8B84B" opacity=".9">
-      <rect x="84" y="96" width="7" height="11" rx="3"/>
-      <rect x="96.5" y="96" width="7" height="11" rx="3"/>
-      <rect x="109" y="96" width="7" height="11" rx="3"/>
-      <rect x="88" y="118" width="8" height="12" rx="4"/>
-      <rect x="104" y="118" width="8" height="12" rx="4"/>
-    </g>
-
-    <g stroke="#08182F" stroke-width="1.6" stroke-linecap="round">
-      <line x1="100" y1="59" x2="100" y2="62"/>
-      <line x1="100" y1="80" x2="100" y2="83"/>
-      <line x1="88" y1="71" x2="91" y2="71"/>
-      <line x1="109" y1="71" x2="112" y2="71"/>
-    </g>
-
-    <g stroke="#08182F" stroke-linecap="round">
-      <line class="mk-hand mk-hr" x1="100" y1="71" x2="100" y2="64" stroke-width="2.6"/>
-      <line class="mk-hand mk-min" x1="100" y1="71" x2="108" y2="71" stroke-width="1.8"/>
-    </g>
-    <circle cx="100" cy="71" r="1.8" fill="#08182F"/>
-  </svg>
   <h2><a href="https://github.com/rmaheshkumar73-code">@rmaheshkumar73-code</a></h2>
-  <p class="name">Mahesh</p>
-  <p class="role">DEEP Coimbatore</p>
-  <p class="tagline">Kovai na gethu</p>
-  <p class="links"><a href="https://www.linkedin.com/in/mahesh-kumar-94093590/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+  <p class="who">Mahesh Kumar &middot; DEEP Coimbatore</p>
+  <p class="bio">One line about what you work on goes here.</p>
+  <p class="links">
+    <a href="https://www.linkedin.com/in/mahesh-kumar-94093590/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/rmaheshkumar73-code" target="_blank" rel="noopener">GitHub</a>
+  </p>
+
+  <div class="game">
+    <div class="game-head">
+      <span>Assemble the line</span>
+      <span class="score">0</span>
+    </div>
+    <canvas class="board" width="120" height="216" tabindex="0"
+            aria-label="Falling block puzzle. Click to start, then use arrow keys."></canvas>
+    <div class="pad">
+      <button type="button" data-act="left" aria-label="Move left">&#8592;</button>
+      <button type="button" data-act="rotate" aria-label="Rotate">&#8635;</button>
+      <button type="button" data-act="right" aria-label="Move right">&#8594;</button>
+      <button type="button" data-act="drop" aria-label="Drop">&#8595;</button>
+    </div>
+    <p class="hint">Click the board to play</p>
+  </div>
+
+  <script>
+  (function () {
+    var root = document.getElementById('rmaheshkumar73-code');
+    if (!root) return;
+    var cv = root.querySelector('.board');
+    var ctx = cv.getContext('2d');
+    var scoreEl = root.querySelector('.score');
+    var hintEl = root.querySelector('.hint');
+
+    var COLS = 10, ROWS = 18, CELL = 12;
+    var COLORS = ['#C1272D', '#E0A32E', '#2E6DB4', '#3E8E5A', '#7B4EA8', '#C9622B', '#4FA8C4'];
+    var SHAPES = [
+      [[1, 1, 1, 1]],
+      [[1, 1], [1, 1]],
+      [[0, 1, 0], [1, 1, 1]],
+      [[0, 1, 1], [1, 1, 0]],
+      [[1, 1, 0], [0, 1, 1]],
+      [[1, 0, 0], [1, 1, 1]],
+      [[0, 0, 1], [1, 1, 1]]
+    ];
+
+    var grid, piece, score, running, over, timer, lastStep;
+
+    function emptyGrid() {
+      var g = [], r, c;
+      for (r = 0; r < ROWS; r++) { g[r] = []; for (c = 0; c < COLS; c++) g[r][c] = 0; }
+      return g;
+    }
+
+    function newPiece() {
+      var i = Math.floor(Math.random() * SHAPES.length);
+      var s = SHAPES[i];
+      return { shape: s, color: COLORS[i], x: Math.floor((COLS - s[0].length) / 2), y: 0 };
+    }
+
+    function collides(shape, px, py) {
+      for (var r = 0; r < shape.length; r++) {
+        for (var c = 0; c < shape[r].length; c++) {
+          if (!shape[r][c]) continue;
+          var x = px + c, y = py + r;
+          if (x < 0 || x >= COLS || y >= ROWS) return true;
+          if (y >= 0 && grid[y][x]) return true;
+        }
+      }
+      return false;
+    }
+
+    function rotate(shape) {
+      var out = [], r, c;
+      for (c = 0; c < shape[0].length; c++) {
+        out[c] = [];
+        for (r = shape.length - 1; r >= 0; r--) out[c].push(shape[r][c]);
+      }
+      return out;
+    }
+
+    function merge() {
+      for (var r = 0; r < piece.shape.length; r++) {
+        for (var c = 0; c < piece.shape[r].length; c++) {
+          if (piece.shape[r][c] && piece.y + r >= 0) {
+            grid[piece.y + r][piece.x + c] = piece.color;
+          }
+        }
+      }
+    }
+
+    function clearLines() {
+      var cleared = 0;
+      for (var r = ROWS - 1; r >= 0; r--) {
+        var full = true;
+        for (var c = 0; c < COLS; c++) { if (!grid[r][c]) { full = false; break; } }
+        if (full) { grid.splice(r, 1); grid.unshift(new Array(COLS).fill(0)); cleared++; r++; }
+      }
+      if (cleared) {
+        score += cleared * cleared * 10;
+        scoreEl.textContent = score;
+      }
+    }
+
+    function step() {
+      if (!collides(piece.shape, piece.x, piece.y + 1)) {
+        piece.y++;
+      } else {
+        merge();
+        clearLines();
+        piece = newPiece();
+        if (collides(piece.shape, piece.x, piece.y)) gameOver();
+      }
+    }
+
+    function gameOver() {
+      running = false;
+      over = true;
+      clearInterval(timer);
+      hintEl.textContent = 'Game over — click to play again';
+      draw();
+      ctx.fillStyle = 'rgba(12,19,27,.82)';
+      ctx.fillRect(0, 68, cv.width, 34);
+      ctx.fillStyle = '#E0A32E';
+      ctx.font = '11px monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('GAME OVER', cv.width / 2, 89);
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      var r, c;
+      for (r = 0; r < ROWS; r++) {
+        for (c = 0; c < COLS; c++) {
+          if (grid[r][c]) block(c, r, grid[r][c]);
+        }
+      }
+      if (piece && running) {
+        for (r = 0; r < piece.shape.length; r++) {
+          for (c = 0; c < piece.shape[r].length; c++) {
+            if (piece.shape[r][c]) block(piece.x + c, piece.y + r, piece.color);
+          }
+        }
+      }
+    }
+
+    function block(x, y, color) {
+      ctx.fillStyle = color;
+      ctx.fillRect(x * CELL + 1, y * CELL + 1, CELL - 2, CELL - 2);
+    }
+
+    function move(dx) {
+      if (running && !collides(piece.shape, piece.x + dx, piece.y)) { piece.x += dx; draw(); }
+    }
+
+    function spin() {
+      if (!running) return;
+      var next = rotate(piece.shape);
+      if (!collides(next, piece.x, piece.y)) { piece.shape = next; draw(); }
+    }
+
+    function softDrop() {
+      if (!running) return;
+      step();
+      draw();
+    }
+
+    function start() {
+      grid = emptyGrid();
+      piece = newPiece();
+      score = 0;
+      over = false;
+      running = true;
+      scoreEl.textContent = '0';
+      hintEl.textContent = 'Arrow keys to play';
+      clearInterval(timer);
+      timer = setInterval(function () { step(); draw(); }, 520);
+      draw();
+      cv.focus();
+    }
+
+    cv.addEventListener('click', function () {
+      if (!running) start();
+    });
+
+    cv.addEventListener('keydown', function (e) {
+      var keys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', ' '];
+      if (keys.indexOf(e.key) === -1) return;
+      e.preventDefault();
+      if (!running) { start(); return; }
+      if (e.key === 'ArrowLeft') move(-1);
+      else if (e.key === 'ArrowRight') move(1);
+      else if (e.key === 'ArrowUp') spin();
+      else softDrop();
+    });
+
+    root.querySelectorAll('.pad button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (!running) { start(); return; }
+        var a = b.getAttribute('data-act');
+        if (a === 'left') move(-1);
+        else if (a === 'right') move(1);
+        else if (a === 'rotate') spin();
+        else softDrop();
+      });
+    });
+
+    grid = emptyGrid();
+    draw();
+    ctx.fillStyle = '#6B7A88';
+    ctx.font = '10px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('CLICK TO', cv.width / 2, 100);
+    ctx.fillText('START', cv.width / 2, 114);
+  })();
+  </script>
 </section>
 <!-- ===== END rmaheshkumar73-code ===== -->
 
