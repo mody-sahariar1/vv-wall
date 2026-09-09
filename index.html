@@ -938,25 +938,34 @@
     }
     #nishajaiwin { position:relative; overflow:hidden; }
     #nishajaiwin .smileys { position:absolute; inset:0; z-index:0; pointer-events:none; user-select:none; overflow:hidden; }
-    #nishajaiwin .smileys i { position:absolute; font-style:normal; line-height:1; opacity:0.12; }
+    #nishajaiwin .smileys i { position:absolute; font-style:normal; line-height:1; opacity:0.45; }
+    #nishajaiwin .smileys b { display:block; font-weight:normal; }
     #nishajaiwin > *:not(.smileys) { position:relative; z-index:1; }
+    #nishajaiwin h2, #nishajaiwin p { text-shadow: 0 1px 2px #EDE6F7, 0 0 6px #EDE6F7; }
     @media (prefers-reduced-motion: no-preference) {
-      #nishajaiwin .smileys i { animation: nishajaiwin-drift 9s ease-in-out infinite; }
+      #nishajaiwin .smileys i { animation: nishajaiwin-fall 7s linear infinite; }
+      #nishajaiwin .smileys b { animation: nishajaiwin-orbit 2.4s linear infinite; }
+      #nishajaiwin .smileys i:nth-child(2n) b { animation-duration: 1.7s; }
+      #nishajaiwin .smileys i:nth-child(3n) b { animation-duration: 3.1s; animation-direction: reverse; }
     }
-    @keyframes nishajaiwin-drift {
-      0%, 100% { transform: translateY(0) rotate(-8deg); }
-      50%      { transform: translateY(-12px) rotate(8deg); }
+    @keyframes nishajaiwin-fall {
+      0%   { top:-16%; }
+      100% { top:112%; }
+    }
+    @keyframes nishajaiwin-orbit {
+      0%   { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
     }
   </style>
   <div class="smileys" aria-hidden="true">
-    <i style="left:6%; top:8%; font-size:30px; animation-delay:0s">🙃</i>
-    <i style="left:74%; top:14%; font-size:22px; animation-delay:1.4s">🙃</i>
-    <i style="left:30%; top:34%; font-size:20px; animation-delay:2.8s">🙃</i>
-    <i style="left:86%; top:52%; font-size:30px; animation-delay:0.7s">🙃</i>
-    <i style="left:12%; top:60%; font-size:22px; animation-delay:3.5s">🙃</i>
-    <i style="left:52%; top:78%; font-size:26px; animation-delay:2.1s">🙃</i>
-    <i style="left:88%; top:86%; font-size:20px; animation-delay:4.2s">🙃</i>
-    <i style="left:24%; top:90%; font-size:28px; animation-delay:1s">🙃</i>
+    <i style="left:6%;  top:8%;  font-size:30px; animation-delay:0s;    animation-duration:6.4s"><b>🙃</b></i>
+    <i style="left:72%; top:14%; font-size:22px; animation-delay:-1.4s; animation-duration:7.6s"><b>🙃</b></i>
+    <i style="left:30%; top:34%; font-size:20px; animation-delay:-2.8s; animation-duration:5.8s"><b>🙃</b></i>
+    <i style="left:84%; top:52%; font-size:30px; animation-delay:-0.7s; animation-duration:8.2s"><b>🙃</b></i>
+    <i style="left:14%; top:60%; font-size:22px; animation-delay:-3.5s; animation-duration:6.9s"><b>🙃</b></i>
+    <i style="left:50%; top:78%; font-size:26px; animation-delay:-2.1s; animation-duration:7.2s"><b>🙃</b></i>
+    <i style="left:88%; top:86%; font-size:20px; animation-delay:-4.2s; animation-duration:6.1s"><b>🙃</b></i>
+    <i style="left:24%; top:90%; font-size:28px; animation-delay:-1s;   animation-duration:8.6s"><b>🙃</b></i>
   </div>
   <h2><a href="https://github.com/nishajaiwin">@nishajaiwin</a></h2>
   <p class="who">Nisha &middot; People and Culture</p>
