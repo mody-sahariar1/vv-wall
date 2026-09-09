@@ -808,6 +808,11 @@
     #preethigovindarajan .wing { transform-box:fill-box; transform-origin:100% 50%; animation-name:preethigovindarajan-wingflap; animation-timing-function:ease-in-out; animation-iteration-count:infinite; }
     #preethigovindarajan .wing-right { transform-origin:0% 50%; }
     @keyframes preethigovindarajan-wingflap { 0%,100% { transform:scaleX(1); } 50% { transform:scaleX(.35); } }
+    #preethigovindarajan .photo-scroller { position:relative; z-index:1; width:100%; overflow:hidden; margin-top:12px; border-radius:8px; }
+    #preethigovindarajan .photo-scroller-track { display:flex; gap:8px; width:max-content; animation-name:preethigovindarajan-scroll; animation-duration:32s; animation-timing-function:linear; animation-iteration-count:infinite; }
+    #preethigovindarajan .photo-scroller-track img { height:72px; width:auto; border-radius:6px; flex-shrink:0; object-fit:cover; box-shadow:0 1px 4px rgba(0,0,0,.35); }
+    #preethigovindarajan .photo-scroller:hover .photo-scroller-track { animation-play-state:paused; }
+    @keyframes preethigovindarajan-scroll { from { transform:translateX(-50%); } to { transform:translateX(0); } }
   </style>
   <div class="rain-bg" aria-hidden="true">
     <span class="raindrop" style="left:2%;  animation-duration:.6s; animation-delay:0s;"></span>
@@ -836,6 +841,34 @@
     <h2><a href="https://github.com/preethigovindarajan">@preethigovindarajan</a></h2>
     <p class="who">Preethi &middot; Communications</p>
     <p>A Storyteller fueling the mission forward</p>
+    <div class="photo-scroller" aria-hidden="true">
+      <div class="photo-scroller-track">
+        <img src="images/preethigovindarajan-banner-01-home.jpg" alt="">
+        <img src="images/preethigovindarajan-banner-02-workshop.jpeg" alt="">
+        <img src="images/preethigovindarajan-banner-03-leaders-forum.jpg" alt="">
+        <img src="images/preethigovindarajan-banner-04-teacher-motivation.jpeg" alt="">
+        <img src="images/preethigovindarajan-banner-05-learning-resources.jpg" alt="">
+        <img src="images/preethigovindarajan-banner-06-smc-training.jpeg" alt="">
+        <img src="images/preethigovindarajan-banner-07-blog.jpg" alt="">
+        <img src="images/preethigovindarajan-banner-08-teacher-wellbeing.png" alt="">
+        <img src="images/preethigovindarajan-banner-09-school-illustration.png" alt="">
+        <img src="images/preethigovindarajan-banner-10-roots-day1.png" alt="">
+        <img src="images/preethigovindarajan-banner-11-roots-day2.png" alt="">
+        <img src="images/preethigovindarajan-banner-12-roots-day3.png" alt="">
+        <img src="images/preethigovindarajan-banner-01-home.jpg" alt="">
+        <img src="images/preethigovindarajan-banner-02-workshop.jpeg" alt="">
+        <img src="images/preethigovindarajan-banner-03-leaders-forum.jpg" alt="">
+        <img src="images/preethigovindarajan-banner-04-teacher-motivation.jpeg" alt="">
+        <img src="images/preethigovindarajan-banner-05-learning-resources.jpg" alt="">
+        <img src="images/preethigovindarajan-banner-06-smc-training.jpeg" alt="">
+        <img src="images/preethigovindarajan-banner-07-blog.jpg" alt="">
+        <img src="images/preethigovindarajan-banner-08-teacher-wellbeing.png" alt="">
+        <img src="images/preethigovindarajan-banner-09-school-illustration.png" alt="">
+        <img src="images/preethigovindarajan-banner-10-roots-day1.png" alt="">
+        <img src="images/preethigovindarajan-banner-11-roots-day2.png" alt="">
+        <img src="images/preethigovindarajan-banner-12-roots-day3.png" alt="">
+      </div>
+    </div>
   </div>
   <div class="bottom-garden" aria-hidden="true">
     <svg class="grass-svg" viewBox="0 0 400 40" preserveAspectRatio="none">
