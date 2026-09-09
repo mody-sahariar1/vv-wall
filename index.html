@@ -292,6 +292,11 @@
     #Poomuthu-G h2 a { color:#164E4B; border-bottom-color:#2F7E7C; }
     #Poomuthu-G .who { color:#356B68; }
     #Poomuthu-G .quote { color:#3F7A77; font-style:italic; font-size:.8rem; margin:10px 0 0; }
+    #Poomuthu-G .pg-head { display:flex; align-items:center; gap:11px; }
+    #Poomuthu-G .pg-head > div { min-width:0; }
+    #Poomuthu-G .pg-head h2 { margin:0; }
+    #Poomuthu-G .pg-head .who { margin:2px 0 0; }
+    #Poomuthu-G .pg-dp { width:58px; height:58px; flex:0 0 58px; border-radius:50%; object-fit:cover; object-position:center 30%; display:block; border:2.5px solid #2F7E7C; box-shadow:0 2px 8px rgba(47,126,124,.28); }
     #Poomuthu-G .cb-row { display:flex; align-items:flex-end; justify-content:space-between; gap:6px; margin-top:14px; }
     #Poomuthu-G .cb-star { margin:0; flex:0 0 auto; text-align:center; }
     #Poomuthu-G .cb-star svg { width:58px; height:74px; display:block; overflow:visible; }
@@ -473,8 +478,13 @@
       </g>
     </g>
   </svg>
-  <h2><a href="https://github.com/Poomuthu-G">@Poomuthu-G</a></h2>
-  <p class="who">Poomuthu &middot; DEEP Cuddalore</p>
+  <div class="pg-head">
+    <img class="pg-dp" src="images/Poomuthu-G.jpeg" alt="Poomuthu G" width="58" height="58" loading="lazy">
+    <div>
+      <h2><a href="https://github.com/Poomuthu-G">@Poomuthu-G</a></h2>
+      <p class="who">Poomuthu &middot; DEEP Cuddalore</p>
+    </div>
+  </div>
   <p class="quote">&ldquo;Cuddalore Premier League&rdquo;</p>
   <div class="cb-row">
     <figure class="cb-star">
