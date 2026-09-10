@@ -1604,6 +1604,21 @@
                            background:linear-gradient(to top, rgba(47,74,42,0.55), rgba(47,74,42,0)); }
     #sooriya-sp .leaf-mark { position:absolute; top:-18px; right:-18px; width:120px; height:120px;
                               color:#6FA85A; opacity:.10; pointer-events:none; }
+    #sooriya-sp .road { position:absolute; left:0; right:0; bottom:6px; height:2px;
+                         background:repeating-linear-gradient(to right, rgba(234,243,230,0.55) 0 10px, transparent 10px 20px);
+                         z-index:1; }
+    #sooriya-sp .roadside { position:absolute; bottom:6px; font-size:15px; line-height:1; z-index:1;
+                             filter:drop-shadow(0 1px 1px rgba(0,0,0,0.35)); }
+    #sooriya-sp .car { position:absolute; bottom:8px; left:-10%; font-size:20px; line-height:1; z-index:2;
+                        filter:drop-shadow(0 2px 2px rgba(0,0,0,0.4));
+                        animation:sp-sooriya-drive 8s linear infinite; }
+    @keyframes sp-sooriya-drive {
+      from { left:-10%; }
+      to   { left:110%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #sooriya-sp .car { animation:none; left:40%; }
+    }
   </style>
   <svg class="leaf-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path d="M17 8C8 10 4 16 3 21c5-1 11-5 13-14zM21 3c-1 6-3 9-7 11 1-5 3-9 7-11z"/>
@@ -1647,6 +1662,13 @@
   <h2><a href="https://github.com/sooriya-sp">Sooriyakumar S</a></h2>
   <p class="who">Programme Implementation Lead</p>
   <div class="ground"></div>
+  <div class="road" aria-hidden="true"></div>
+  <span class="roadside" style="left:8%;" aria-hidden="true">🌳</span>
+  <span class="roadside" style="left:28%;" aria-hidden="true">🌿</span>
+  <span class="roadside" style="left:50%;" aria-hidden="true">🌲</span>
+  <span class="roadside" style="left:70%;" aria-hidden="true">🌿</span>
+  <span class="roadside" style="left:90%;" aria-hidden="true">🌳</span>
+  <span class="car" aria-hidden="true">🚗</span>
 </section>
 <!-- ===== END sooriya-sp ===== -->
 
